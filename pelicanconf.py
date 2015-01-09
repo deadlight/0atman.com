@@ -8,9 +8,12 @@ SITEURL = ''
 
 PATH = 'content'
 
-TIMEZONE = 'Europe/Paris'
+TIMEZONE = 'Europe/London'
 
 DEFAULT_LANG = u'en'
+
+GITHUB_URL = 'http://github.com/0atman/'
+DISQUS_SITENAME = "namtao"
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
@@ -32,5 +35,5 @@ SOCIAL = (('You can add links in your config file', '#'),
 DEFAULT_PAGINATION = 10
 
 # Uncomment following line if you want document-relative URLs when developing
-#RELATIVE_URLS = True
+# RELATIVE_URLS = True
 SITEURL = "http://0atman.github.io/polyhacker/"
