@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 
 AUTHOR = u'0atman'
 SITENAME = u'Polyhacker'
-SITEURL = 'http://0atman.github.io/polyhacker/'
+SITEURL = ''
 
 PATH = 'content'
 
@@ -39,4 +39,3 @@ DEFAULT_PAGINATION = 10
 
 # Uncomment following line if you want document-relative URLs when developing
 # RELATIVE_URLS = True
-SITEURL = "http://0atman.github.io/polyhacker/"
