@@ -4,8 +4,8 @@ from __future__ import unicode_literals
 
 AUTHOR = u'0atman'
 AUTHORS = AUTHOR
-SITENAME = u'Polyhacker'
-SITEURL = 'http://polyhacker.com'
+SITENAME = u'Articles'
+SITEURL = 'http://articles.0atman.com'
 
 PATH = 'content'
 
@@ -20,7 +20,7 @@ EXTRA_PATH_METADATA = {
     'extra/CNAME': {'path': 'CNAME'}
 }
 
-THEME = "/home/oatman/.virtualenvs/polyhacker/polyhacker/themes/pelican-themes/chunk"
+THEME = "/home/oatman/.virtualenvs/polyhacker/polyhacker/themes/pelican-themes/nikhil-theme"
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
