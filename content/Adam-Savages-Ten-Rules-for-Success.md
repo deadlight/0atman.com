@@ -1,6 +1,8 @@
 Title: Adam Savage’s Ten Rules for Success
 Date: 2014-04-06 10:20
 Category: makers
+Tags: mythbusters, makers, done
+
 
 0. Get good at something. Really good. Get good at as many things as you can. Being good at one thing makes it easier to get good at other things.
 

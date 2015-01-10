@@ -35,10 +35,11 @@ LINKS = (('Pelican', 'http://getpelican.com/'),
          ('Jinja2', 'http://jinja.pocoo.org/'),
 )
 
-PELICAN_SIMPLEGREY_TWITTER_CARD_ACCOUNT = '__fle__'
+
 # Social widget
 SOCIAL = (
         ('Twitter', 'http://twitter.com/0atman'),
+        ('Github', 'http://github.com/0atman'),
 )
 DEFAULT_PAGINATION = 10
 
