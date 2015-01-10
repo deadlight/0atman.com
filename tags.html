@@ -1,86 +1,252 @@
-<!doctype html>
-<html lang="">	
+<!DOCTYPE html>
+<html lang="en"
+>
 <head>
-	<meta charset="utf-8"/>
-	<title>Articles</title>	
-	<meta name="author" content="0atman">
-	
-
-	<link rel="stylesheet" href="/theme/css/main.css" type="text/css" />
-		
+    <title>Tags - Articles</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-    <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Articles Atom Feed" />
+
+
+        <meta name="author" content="0atman" />
+
+    <!-- Enable latex plugin -->
+
+
+    <!-- Open Graph tags -->
+        <meta property="og:site_name" content="Articles" />
+        <meta property="og:type" content="website"/>
+        <meta property="og:title" content="Articles"/>
+        <meta property="og:url" content=""/>
+        <meta property="og:description" content="Articles"/>
+
+    <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="@0atman">
+        <meta name="twitter:creator" content="@0atman">
+    <meta name="twitter:domain" content="">
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="/theme/css/bootstrap.darkly.min.css" type="text/css"/>
+    <link href="/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="/theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="/theme/css/style.css" type="text/css"/>
+
+        <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+              title="Articles ATOM Feed"/>
+
+
+
 </head>
-	
 <body>
 
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
-	  
-	  <header role="banner">
-	    <div class="feeds">
-	        <a href="/feeds/all.atom.xml" rel="alternate"><img src="/theme/images/icons/feed-32px.png" alt="atom feed"/></a>
-	    </div>
-		<a href="" class="title">Articles</a>
-      </header>
-	
-	  <div class="wrapper">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand">
+Articles            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                        <li >
+                            <a href="/category/makers.html">Makers</a>
+                        </li>
+                        <li >
+                            <a href="/category/open-letter.html">Open-letter</a>
+                        </li>
+                        <li >
+                            <a href="/category/privacy.html">Privacy</a>
+                        </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
 
-		  <div role="main" class="content">
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
 
-<h1>Tags</h1>
-	
-<ul class="tagcloud">
-    <li class="tag-4"><a href="/tag/mythbusters.html">mythbusters</a></li>
-    <li class="tag-4"><a href="/tag/makers.html">makers</a></li>
-    <li class="tag-4"><a href="/tag/done.html">done</a></li>
-</ul>
+    <section id="tags">
+        <h1>Tags for Articles</h1>
+        <div class="panel-group" id="accordion">            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse-done">done <span class="badge pull-right">1</span></a>
+                    </h4>
+                </div>
+                <div id="collapse-done" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <p><span class="categories-timestamp"><time datetime="2014-04-06T10:20:00+01:00">Sun 06 April 2014</time></span> <a href="/adam-savages-ten-rules-for-success.html">Adam Savage’s Ten Rules for Success</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse-makers">makers <span class="badge pull-right">1</span></a>
+                    </h4>
+                </div>
+                <div id="collapse-makers" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <p><span class="categories-timestamp"><time datetime="2014-04-06T10:20:00+01:00">Sun 06 April 2014</time></span> <a href="/adam-savages-ten-rules-for-success.html">Adam Savage’s Ten Rules for Success</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse-mythbusters">mythbusters <span class="badge pull-right">1</span></a>
+                    </h4>
+                </div>
+                <div id="collapse-mythbusters" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <p><span class="categories-timestamp"><time datetime="2014-04-06T10:20:00+01:00">Sun 06 April 2014</time></span> <a href="/adam-savages-ten-rules-for-success.html">Adam Savage’s Ten Rules for Success</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-		  </div>	
-		  
-		  <div class="sidebar">
-		    <div class="sidebar-container" >
+    </section>
+        </div>
+        <div class="col-sm-3 well well-sm" id="sidebar">
+
+<aside>
+    <section>
+        <ul class="list-group list-group-flush">
+                <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
+                  <ul class="list-group" id="social">
+                    <li class="list-group-item"><a href="http://twitter.com/0atman"><i class="fa fa-twitter-square fa-lg"></i> Twitter</a></li>
+                    <li class="list-group-item"><a href="http://github.com/0atman"><i class="fa fa-github-square fa-lg"></i> Github</a></li>
+                  </ul>
+                </li>
 
 
-  	          <nav>
-	            <h2>Categories</h2>
-	            <ul>
-	                <li ><a href="/category/makers.html">makers</a></li>
-	                <li ><a href="/category/open-letter.html">open-letter</a></li>
-	                <li ><a href="/category/privacy.html">privacy</a></li>
-	            </ul>
-	          </nav>
 
-	            <aside>
-	            <h2>Social</h2>
-			      <ul class="social">
-				    <li><a href="http://twitter.com/0atman">Twitter</a><i></i></li>
-				    <li><a href="http://github.com/0atman">Github</a><i></i></li>
-			      </ul>
-			    </aside>
+                <li class="list-group-item"><a href="/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+                    <ul class="list-group list-inline tagcloud" id="tags">
+                        <li class="list-group-item tag-4">
+                            <a href="/tag/done.html">
+                                done
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="/tag/makers.html">
+                                makers
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="/tag/mythbusters.html">
+                                mythbusters
+                            </a>
+                        </li>
+                    </ul>
+                </li>    
 
-	            <aside>
-	              <h2>Blogroll</h2>
-	              <ul>
-	                  <li><a href="http://getpelican.com/">Pelican</a></li>
-	                  <li><a href="http://python.org/">Python.org</a></li>
-	                  <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
-	              </ul>
-	            </aside>
-	        </div>
-		  </div>
 
-	  </div>
 
-      <footer>
-		<p role="contentinfo">
-		  0atman - Proudly powered by <a href="http://alexis.notmyidea.org/pelican/">pelican</a>. Theme <a href="https://github.com/fle/pelican-sober">pelican-sober</a>.
-    	</p>
+    <li class="list-group-item"><h4><i class="fa fa-github fa-lg"></i><span class="icon-label">GitHub Repos</span></h4>
+        <div id="gh_repos">
+            <p class="list-group-item">Status updating...</p>
+        </div>
+    </li>
+    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+      <ul class="list-group" id="links">
+        <li class="list-group-item">
+            <a href="http://getpelican.com/" target="_blank">
+                Pelican
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://python.org/" target="_blank">
+                Python.org
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://jinja.pocoo.org/" target="_blank">
+                Jinja2
+            </a>
+        </li>
+      </ul>
+    </li>
 
-	  </footer>	
+        </ul>
+    </section>
 
-	</div>
-	
+</aside>        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2014 0atman
+            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>              <p><small>  <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="//i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a>
+    Content
+  licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution 4.0 International License</a>, except where indicated otherwise.
+</small></p>
+         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="/theme/js/jquery.min.js"></script>
 
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="/theme/js/respond.min.js"></script>
+
+    <!-- GitHub JS -->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            if (!window.jXHR) {
+                var jxhr = document.createElement('script');
+                jxhr.type = 'text/javascript';
+                jxhr.src = '/theme/js/jXHR.js';
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(jxhr, s);
+            }
+
+            github.showRepos({
+                user: '0atman',
+                count: 5,
+                skip_forks: false,
+                target: '#gh_repos'
+            });
+        });
+    </script>
+    <script src="/theme/js/github.js" type="text/javascript"></script>
+    <!-- End GitHub JS Code -->
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'namtao'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
 </body>
 </html>
