@@ -20,7 +20,7 @@ EXTRA_PATH_METADATA = {
     'extra/CNAME': {'path': 'CNAME'}
 }
 
-THEME = "/home/oatman/.virtualenvs/articles/articles/themes/pelican-themes/nikhil-theme"
+THEME = "/home/oatman/pelican-themes/nikhil-theme"
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
