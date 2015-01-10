@@ -20,7 +20,8 @@ EXTRA_PATH_METADATA = {
     'extra/CNAME': {'path': 'CNAME'}
 }
 
-THEME = "/home/oatman/pelican-themes/pelican-sober"
+THEME = "/home/oatman/pelican-themes/pelican-bootstrap3"
+BOOTSTRAP_THEME="darkly"
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
@@ -45,3 +46,21 @@ DEFAULT_PAGINATION = 10
 
 # Uncomment following line if you want document-relative URLs when developing
 # RELATIVE_URLS = True
+
+# pelican-bootstrap3 settings
+SHOW_ARTICLE_AUTHOR=True
+#SITELOGO="https://avatars1.githubusercontent.com/u/354231?v=3&s=200"
+#DISPLAY_BREADCRUMBS=True
+#DISPLAY_CATEGORY_IN_BREADCRUMBS=True
+#DISPLAY_ARTICLE_INFO_ON_INDEX=True
+
+#ABOUT_ME="I'm Tris"
+#AVATAR="https://avatars1.githubusercontent.com/u/354231?v=3&s=200"
+
+DISPLAY_TAGS_INLINE=True
+CC_LICENSE="CC-BY-SA"
+GITHUB_USER="0atman"
+
+TWITTER_CARDS=True
+TWITTER_USERNAME="0atman"
+
