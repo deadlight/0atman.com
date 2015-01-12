@@ -12,7 +12,7 @@ from pelicanconf import *
 
 RELATIVE_URLS = False
 
-SITEURL = 'http://articles.0atman.com'
+SITEURL = 'http://www.0atman.com'
 FEED_ALL_ATOM = 'feeds/all.atom.xml'
 CATEGORY_FEED_ATOM = 'feeds/%s.atom.xml'
 
