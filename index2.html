@@ -2,7 +2,7 @@
 <html lang="en"
 >
 <head>
-    <title>open-letter - 0atman</title>
+    <title>0atman</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -11,9 +11,8 @@
 
     <link href="http://articles.0atman.com/images/favicon.png" rel="icon">
 
-
-    <meta name="author" content="0atman" />
-    <meta name="keywords" content="open-letter" />
+<link rel="canonical" href="http://articles.0atman.com">
+        <meta name="author" content="0atman" />
 
     <!-- Open Graph tags -->
         <meta property="og:site_name" content="0atman" />
@@ -28,12 +27,13 @@
     <meta name="twitter:domain" content="http://articles.0atman.com">
 
     <!-- Bootstrap -->
-        <link rel="stylesheet" href="http://articles.0atman.com/theme/css/bootstrap.darkly.min.css" type="text/css"/>
+        <link rel="stylesheet" href="http://articles.0atman.com/theme/css/bootstrap.yeti.min.css" type="text/css"/>
     <link href="http://articles.0atman.com/theme/css/font-awesome.min.css" rel="stylesheet">
 
     <link href="http://articles.0atman.com/theme/css/pygments/native.css" rel="stylesheet">
         <link href="http://articles.0atman.com/theme/css/typogrify.css" rel="stylesheet">
     <link rel="stylesheet" href="http://articles.0atman.com/theme/css/style.css" type="text/css"/>
+        <link href="http://articles.0atman.com/static/custom.css" rel="stylesheet">
 
         <link href="http://articles.0atman.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
               title="0atman ATOM Feed"/>
@@ -55,11 +55,14 @@
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
+                         <li><a href="http://articles.0atman.com/about">
+                             About
+                          </a></li>
+                        <li >
+                            <a href="http://articles.0atman.com/category/coding.html">Coding</a>
+                        </li>
                         <li >
                             <a href="http://articles.0atman.com/category/makers.html">Makers</a>
-                        </li>
-                        <li class="active">
-                            <a href="http://articles.0atman.com/category/open-letter.html">Open-letter</a>
                         </li>
                         <li >
                             <a href="http://articles.0atman.com/category/privacy.html">Privacy</a>
@@ -73,20 +76,78 @@
     </div>
 </div> <!-- /.navbar -->
 <!-- Banner -->
-<!-- End Banner -->
+<style>
+	#banner{
+	    background-image:url("http://articles.0atman.com/images/composer.png");
+	}
+</style>
+
+<div id="banner">
+	<div class="container">
+		<div class="copy">
+			<h1>0atman</h1>
+				<p class="intro">My bow is all strings</p>
+		</div>
+	</div>
+</div><!-- End Banner -->
 <div class="container">
     <div class="row">
         <div class="col-sm-9">
 
             <article>
-                <h2><a href="http://articles.0atman.com/an-open-letter-to-moonpigcom.html">An open letter to&nbsp;moonpig.com</a></h2>
-                <div class="summary"><p>It was with much distress that I read this article about your insecure <span class="caps">API</span>:&nbsp;http://ifc0nfig.com/moonpig-vulnerability/</p>
-<p>The author, Paul Price, showed that you do not use any authentication. I have tested this myself (I am a software engineer, and it was <span class="caps">TRIVIAL</span>) and can confirm the flagrant disregard ...</p>
-                    <a class="btn btn-default btn-xs" href="http://articles.0atman.com/an-open-letter-to-moonpigcom.html">more ...</a>
+                <h2><a href="http://articles.0atman.com/adam-savages-ten-rules-for-success.html">Adam Savage’s Ten Rules for&nbsp;Success</a></h2>
+                <div class="summary"><ol>
+<li>
+<p>Get good at something. Really good. Get good at as many things as you can. Being good at one thing makes it easier to get good at other&nbsp;things.</p>
+</li>
+<li>
+<p>Getting good at stuff takes practice. Lots and lots of&nbsp;practice.</p>
+</li>
+<li>
+<p>Get <span class="caps">OBSESSED</span>. Everyone at the top of their field is ...</p></li></ol>
+                    <a class="btn btn-default btn-xs" href="http://articles.0atman.com/adam-savages-ten-rules-for-success.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="http://articles.0atman.com/unicode-identifiers-in-python-3.html">Unicode Identifiers In Python&nbsp;3</a></h2>
+                <div class="summary"><p>I&#8217;m not sure what I think about&nbsp;this.</p>
+<div class="highlight"><pre>&gt;&gt;&gt; Σ = sum
+&gt;&gt;&gt; Σ([1,2,3])
+6
+</pre></div>
+                    <a class="btn btn-default btn-xs" href="http://articles.0atman.com/unicode-identifiers-in-python-3.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="http://articles.0atman.com/acl2-is-fascinating.html"><span class="caps">ACL2</span> Is&nbsp;Fascinating</a></h2>
+                <div class="summary"><p><code>ACL2 !&gt; (thm (=(+ a b) (+ b a)))</code></p>
+<div class="highlight"><pre>Q.E.D.
+
+Summary
+Form:  ( THM ...)
+Rules: ((:DEFINITION =)
+        (:EXECUTABLE-COUNTERPART TAU-SYSTEM))
+Time:  0.00 seconds (prove: 0.00, print: 0.00, other: 0.00)
+Prover steps counted:  10
+
+Proof succeeded.
+</pre></div>
+                    <a class="btn btn-default btn-xs" href="http://articles.0atman.com/acl2-is-fascinating.html">more ...</a>
                 </div>
             </article>
             <hr/>
 
+        <ul class="pagination">
+                <li class="prev"><a href="http://articles.0atman.com/index.html">&laquo;</a>
+                </li>
+                    <li class=""><a
+                            href="http://articles.0atman.com/index.html">1</a></li>
+                    <li class="active"><a
+                            href="http://articles.0atman.com/index2.html">2</a></li>
+                <li class="next disabled"><a href="#">&raquo;</a></li>
+        </ul>
         </div>
         <div class="col-sm-3" id="sidebar">
             <aside>
@@ -97,17 +158,17 @@
               <ul class="list-group" id="social">
                 <li class="list-group-item"><a href="http://twitter.com/0atman"><i class="fa fa-twitter-square fa-lg"></i> Twitter</a></li>
                 <li class="list-group-item"><a href="http://github.com/0atman"><i class="fa fa-github-square fa-lg"></i> Github</a></li>
-                <li class="list-group-item"><a href="http://blog.0atman.com"><i class="fa fa-tumblr-square fa-lg"></i> tumblr</a></li>
-                <li class="list-group-item"><a href="http://careers.stackoverflow.com/oatman"><i class="fa fa-stack-careers-square fa-lg"></i> stack careers</a></li>
-                <li class="list-group-item"><a href="http://www.last.fm/user/namtao"><i class="fa fa-last.fm-square fa-lg"></i> last.fm</a></li>
-                <li class="list-group-item"><a href="http://music.namtao.com/"><i class="fa fa-bandcamp-square fa-lg"></i> bandcamp</a></li>
+                <li class="list-group-item"><a href="http://blog.0atman.com"><i class="fa fa-tumblr-square fa-lg"></i> Tumblr</a></li>
+                <li class="list-group-item"><a href="http://careers.stackoverflow.com/oatman"><i class="fa fa-stackoverflow-square fa-lg"></i> Stackoverflow</a></li>
+                <li class="list-group-item"><a href="http://www.last.fm/user/namtao"><i class="fa fa-last.fm-square fa-lg"></i> Last.fm</a></li>
+                <li class="list-group-item"><a href="http://music.namtao.com/"><i class="fa fa-bandcamp-square fa-lg"></i> Bandcamp</a></li>
                 <li class="list-group-item"><a href="http://articles.0atman.com/feeds/all.atom.xml"><i class="fa fa-rss-square fa-lg"></i> rss</a></li>
               </ul>
             </li>
 
 
 
-            <li class="list-group-item"><a href="http://articles.0atman.com/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+            <li class="list-group-item"><a href="http://articles.0atman.com/tags.html"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
                 <ul class="list-group list-inline tagcloud" id="tags">
                     <li class="list-group-item tag-4">
                         <a href="http://articles.0atman.com/tag/done.html">
@@ -161,7 +222,7 @@
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2014 0atman
+         <div class="col-xs-10">&copy; 2015 0atman
             &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>              <p><small>  <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="//i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a>
