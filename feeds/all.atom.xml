@@ -73,18 +73,19 @@ Expiration in 2016 does not reassure me, I do not want my private life to be spi
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;a href="http://boingboing.net/2013/08/19/adam-savages-ten-rules-for-s.html"&gt;source&lt;/a&gt;&lt;/p&gt;</summary><category term="mythbusters"></category><category term="makers"></category><category term="done"></category></entry><entry><title>Unicode Identifiers In Python 3</title><link href="http://articles.0atman.com/unicode-identifiers-in-python-3.html" rel="alternate"></link><updated>2013-11-15T17:39:00+00:00</updated><author><name>0atman</name></author><id>tag:articles.0atman.com,2013-11-15:unicode-identifiers-in-python-3.html</id><summary type="html">&lt;p&gt;I&amp;#8217;m not sure what I think about&amp;nbsp;this.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&amp;gt;&amp;gt;&amp;gt; Σ = sum
-&amp;gt;&amp;gt;&amp;gt; Σ([1,2,3])
-6
-&lt;/pre&gt;&lt;/div&gt;</summary></entry><entry><title>ACL2 Is Fascinating</title><link href="http://articles.0atman.com/acl2-is-fascinating.html" rel="alternate"></link><updated>2013-11-12T10:20:00+00:00</updated><author><name>0atman</name></author><id>tag:articles.0atman.com,2013-11-12:acl2-is-fascinating.html</id><summary type="html">&lt;p&gt;&lt;code&gt;ACL2 !&amp;gt; (thm (=(+ a b) (+ b a)))&lt;/code&gt;&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;Q.E.D.
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="err"&gt;Σ&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;sum&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="err"&gt;Σ&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;span class="mi"&gt;6&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</summary></entry><entry><title>ACL2 Is Fascinating</title><link href="http://articles.0atman.com/acl2-is-fascinating.html" rel="alternate"></link><updated>2013-11-12T10:20:00+00:00</updated><author><name>0atman</name></author><id>tag:articles.0atman.com,2013-11-12:acl2-is-fascinating.html</id><summary type="html">&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;ACL2&lt;/span&gt; &lt;span class="nv"&gt;!&amp;gt;&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;thm&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;=&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;+&lt;/span&gt; &lt;span class="nv"&gt;a&lt;/span&gt; &lt;span class="nv"&gt;b&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;+&lt;/span&gt; &lt;span class="nv"&gt;b&lt;/span&gt; &lt;span class="nv"&gt;a&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
 
-Summary
-Form:  ( THM ...)
-Rules: ((:DEFINITION =)
-        (:EXECUTABLE-COUNTERPART TAU-SYSTEM))
-Time:  0.00 seconds (prove: 0.00, print: 0.00, other: 0.00)
-Prover steps counted:  10
+&lt;span class="nv"&gt;Q.E.D.&lt;/span&gt;
 
-Proof succeeded.
+&lt;span class="nv"&gt;Summary&lt;/span&gt;
+&lt;span class="nv"&gt;Form:&lt;/span&gt;  &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="nv"&gt;THM&lt;/span&gt; &lt;span class="o"&gt;...&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="nv"&gt;Rules:&lt;/span&gt; &lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="ss"&gt;:DEFINITION&lt;/span&gt; &lt;span class="nb"&gt;=&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ss"&gt;:EXECUTABLE-COUNTERPART&lt;/span&gt; &lt;span class="nv"&gt;TAU-SYSTEM&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;span class="nv"&gt;Time:&lt;/span&gt;  &lt;span class="mf"&gt;0.00&lt;/span&gt; &lt;span class="nv"&gt;seconds&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;prove:&lt;/span&gt; &lt;span class="mf"&gt;0.00&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="nv"&gt;print:&lt;/span&gt; &lt;span class="mf"&gt;0.00&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="nv"&gt;other:&lt;/span&gt; &lt;span class="mf"&gt;0.00&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="nv"&gt;Prover&lt;/span&gt; &lt;span class="nv"&gt;steps&lt;/span&gt; &lt;span class="nv"&gt;counted:&lt;/span&gt;  &lt;span class="mi"&gt;10&lt;/span&gt;
+
+&lt;span class="nv"&gt;Proof&lt;/span&gt; &lt;span class="nv"&gt;succeeded.&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;</summary></entry></feed>
