@@ -1,6 +1,6 @@
 Title: An open letter to moonpig.com
-Date: 2014-01-05 10:20
-Category: open-letter
+Date: 2015-01-05 10:20
+Category: privacy
 
 It was with much distress that I read this article about your insecure API: http://ifc0nfig.com/moonpig-vulnerability/
 

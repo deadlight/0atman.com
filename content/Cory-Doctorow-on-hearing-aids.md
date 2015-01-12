@@ -1,5 +1,5 @@
 Title: Cory Doctorow, on hearing aids
-Date: 2014-012-016 10:20
+Date: 2014-12-16 10:20
 Category: privacy
 
 If you’re my age and grew up with the Walkman or you’re little younger and you grow up with the iPod, you will have logged enough punishing earbud hours that by the time you reach a certain age you will almost certainly need a hearing aid
@@ -13,3 +13,5 @@ Instead it will be a computer that you put in your body and, depending on how it
 - tell other people what you’ve heard
 
 **We’ve got to get this right**
+
+[source](https://www.youtube.com/watch?v=4ZqodxGufR8)
