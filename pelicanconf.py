@@ -73,7 +73,7 @@ SHOW_ARTICLE_AUTHOR = True
 # DISPLAY_CATEGORY_IN_BREADCRUMBS=True
 # DISPLAY_ARTICLE_INFO_ON_INDEX=True
 
-ABOUT_ME = "Gentleman Scientist, engineer and musician."
+ABOUT_ME = "Gentleman Scientist and musician"
 AVATAR = "images/hex-moon.png"
 BANNER = "images/composer.png"
 BANNER_SUBTITLE = 'My bow is all strings'
