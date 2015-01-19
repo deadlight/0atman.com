@@ -68,13 +68,13 @@ DEFAULT_PAGINATION = 6
 # pelican-bootstrap3 settings
 SHOW_ARTICLE_AUTHOR = True
 
-# SITELOGO="https://avatars1.githubusercontent.com/u/354231?v=3&s=200"
+# SITELOGO="images/hex-moon.png"
 # DISPLAY_BREADCRUMBS=True
 # DISPLAY_CATEGORY_IN_BREADCRUMBS=True
 # DISPLAY_ARTICLE_INFO_ON_INDEX=True
 
 # ABOUT_ME = "I'm Tris"
-# AVATAR = "http://1.gravatar.com/avatar/054187c51ba0ca1e221a581739b51568?size=300px"
+AVATAR = "images/hex-moon-black.png"
 BANNER = "images/composer.png"
 BANNER_SUBTITLE = 'My bow is all strings'
 BANNER_ALL_PAGES = False
