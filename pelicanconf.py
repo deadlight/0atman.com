@@ -74,7 +74,7 @@ SHOW_ARTICLE_AUTHOR = True
 # DISPLAY_ARTICLE_INFO_ON_INDEX=True
 
 ABOUT_ME = "Gentleman Scientist and musician"
-AVATAR = "images/hex-moon.png"
+AVATAR = "images/hex-moon-black.png"
 BANNER = "images/composer.png"
 BANNER_SUBTITLE = 'My bow is all strings'
 BANNER_ALL_PAGES = False
