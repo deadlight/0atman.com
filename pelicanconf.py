@@ -52,7 +52,7 @@ SOCIAL = (
     ('Tumblr', 'http://blog.0atman.com'),
     ('Stackoverflow', 'http://careers.stackoverflow.com/oatman'),
     ('Last.fm', 'http://www.last.fm/user/namtao'),
-    ('Bandcamp', 'http://music.namtao.com/')
+    ('Soundcloud', 'http://soundcloud.com/namtao')
 )
 # PAGE_URL = '{slug}'
 # PAGE_SAVE_AS = '{slug}.html'
