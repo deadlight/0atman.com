@@ -1,6 +1,7 @@
 Title: Telegraph Green Article response
 Date: 2015-01-21 20:00
 Category: politics
+Status: draft
 
 
 Yesterday *The Telegraph* published an articled titled [Drugs, brothels, al-Qaeda and the Beyonce tax: the Green Party plan for Britain](http://www.telegraph.co.uk/news/politics/green-party/11356354/Drugs-brothels-al-Qaeda-and-the-Beyonce-tax-the-Green-Party-plan-for-Britain.html) 
