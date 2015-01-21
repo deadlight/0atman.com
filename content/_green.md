@@ -98,13 +98,14 @@ _Beat the raptor_
   - Britain will leave NATO, end the special relationship with the US, and unilaterally abandon nuclear weapons. A standing army, navy and airforce is “unnecessary”. Bases will be turned into nature reserves and the arms industry “converted” to producing wind turbines.
 `Given that the nessesity for the UK to protect itself at war for the past 50 years has been none: A standing army is of not use. When it is not needed, it finds a use anyway. See iraq, syria, afganistan etc etc.`
 
-#Immigration 
+#Immigration
   - “Richer regions do not have the right to use migration controls to protect their privileges from others in the long term,” the party’s policy book states.
 `Global thinking in action.`
   - A Green Government will “progressively reduce” border controls, including an amnesty for illegal immigrants after five years.
 `Good.`
   - Access to benefits, the right to vote and tax obligations will apply to everyone living on British soil, regardless of passport. The policy book states: “We will work to create a world of global inter-responsibility in which the concept of a 'British national' is irrelevant and outdated.”
 `Indeed. There is no place for nationalism in a modern society.`
+
 # Political Mechanics
   - Political parties will be funded by the state.
 `To stop lobbying by corporations.`
