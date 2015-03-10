@@ -14,13 +14,13 @@
 <link rel="canonical" href="http://www.0atman.com/colourising-watch.html">
 
         <meta name="author" content="0atman" />
-        <meta name="description" content="For many years I had assumed (based on some comments in forums) that the watch unix command had a bug, and could not display colourised terminal output, even when using the -c colour option. This made me sad. I’ve been writing tests in py.test, which colourises the output ..." />
+        <meta name="description" content="For many years I had assumed (based on some comments in forums) that the watch unix command had a bug, and could not display colourised terminal output, even when using the -c colour option. This made me sad. Recently I’ve been writing tests in py.test, which colourises the ..." />
 
         <meta property="og:site_name" content="0atman" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="Colourising Watch"/>
         <meta property="og:url" content="http://www.0atman.com/colourising-watch.html"/>
-        <meta property="og:description" content="For many years I had assumed (based on some comments in forums) that the watch unix command had a bug, and could not display colourised terminal output, even when using the -c colour option. This made me sad. I’ve been writing tests in py.test, which colourises the output ..."/>
+        <meta property="og:description" content="For many years I had assumed (based on some comments in forums) that the watch unix command had a bug, and could not display colourised terminal output, even when using the -c colour option. This made me sad. Recently I’ve been writing tests in py.test, which colourises the ..."/>
         <meta property="article:published_time" content="2015-03-10" />
             <meta property="article:section" content="coding" />
             <meta property="article:author" content="0atman" />
@@ -111,7 +111,7 @@
                 </div>
                 <p>For many years I had assumed (based on some comments in forums) that the <code>watch</code> unix command had a bug, and could not display colourised terminal output, even when using the <code>-c</code> colour&nbsp;option.</p>
 <p>This made me&nbsp;sad.</p>
-<p>I&#8217;ve been writing tests in py.test, which colourises the output in red for failed test cases. My tests take less than 1s, so while I&#8217;m writing them, I <code>watch py.test</code>, watch it fail, and keep writing it till it&nbsp;passes. </p>
+<p>Recently I&#8217;ve been writing tests in py.test, which colourises the output in red for failed test cases. My tests take less than 1s, so while I&#8217;m writing them, I run <code>watch py.test</code>, watch it fail, and keep writing it till it&nbsp;passes. </p>
 <p>After a few days of non-coloured output, I resumed my search and found <a href="http://stackoverflow.com/questions/10776977/more-command-alternative-that-does-support-colors">this</a>. My search was&nbsp;over!</p>
 <p>The simple solution is this: Not only must watch be told (with <code>-c</code>) to interpret colours, but the command you are watching must be too. This is because both operate in <code>color=auto</code> mode; colours are only output if the program detects it is being run in an interactive terminal, not a&nbsp;pipe.</p>
 <p>I simply ran <code>watch -c py.test --color=yes</code> and shed tears of&nbsp;joy!</p>
