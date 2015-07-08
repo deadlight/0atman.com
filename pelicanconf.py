@@ -12,6 +12,8 @@ TIMEZONE = 'Europe/London'
 
 DEFAULT_LANG = u'en'
 
+DEFAULT_DATE = 'fs'
+
 GITHUB_URL = 'http://github.com/0atman/'
 
 STATIC_PATHS = [
