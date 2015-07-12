@@ -6,25 +6,30 @@ Tags: canonical, ubuntu, node, scss
 
 
 ## Edit scss
-Make tweaks to vanilla, as mentioned by [Ant](http://design.canonical.com/author/ya-bo-ng/) [here](http://design.canonical.com/2015/06/introducing-vanilla/).
+We've got a now css framework at Canonical, as mentioned by [Ant](http://design.canonical.com/author/ya-bo-ng/) [here](http://design.canonical.com/2015/06/introducing-vanilla/). We wanted the build to be as automated and close to CI/CD pronciples as possible. I'll explain our process in this post.
 
 ## Build
 Commiting to our [github repository](https://github.com/ubuntudesign/vanilla-framework) kicks off a travis build that runs out gulp tests, which include [sasslint](https://github.com/brigade/scss-lint/).
-and we also use [david-dm.org](https://david-dm.org/ubuntudesign/vanilla-framework#info=devDependencies) to make sure our npm dependencies are fresh.
+and we also use [david-dm.org](https://david-dm.org/ubuntudesign/vanilla-framework#info=devDependencies) to make sure our npm dependencies are fresh. Both these have nice badges we can link to right from our github page, so the first thing people see is the heath of our project. I really likt his, it keeps us honest.
+
+Not everything can be done with travis, however, as publishing to npm and our demo site require some private credentials. For the confidential build, we use Jenkins. (formally Hudson).
 
 ## jenkins build
 Our jenkins build does a few things:
 
-0. update package.json (Increment the package.js version number)
+0. Increment the package.json version number
 0. npm publish
-0. build sass with `npm install`
-0. upload styles.css to our assets server
-0. update sassdoc
-0. update demo site with new css
+0. Build sass with `npm install`
+0. Upload styles.css to our assets server
+0. Update sassdoc
+0. Update demo site with new css
 
 
 [Robin](http://design.canonical.com/author/nottrobin/) put this functionality together in a neat script: [publish.sh](https://github.com/ubuntudesign/vanilla-builder/blob/master/publish.sh).
 
-We use this script in a jenkins build that we kick off with a few parameters, `point`, `minor` and `major` to indicate the version to be updated in package.json.
+We use this script in a jenkins build that we kick off with a few parameters, `point`, `minor` and `major` to indicate the version to be updated in package.json. This allows our devs push-button releases on the fly.
 
-After less than 30 seconds, our [demo site](http://ubuntudesign.github.io/vanilla-framework/demo/), which showcases our `elements?` and their usage.
+After less than 30 seconds, our [demo site](http://ubuntudesign.github.io/vanilla-framework/demo/), which showcases our `elements?` and their usage, is updated. This demo is styled with the latest version of Vanilla, and also serves as documentation and a test of the css.
+
+## The Future
+It'd be nice for the demo test (which we currently just eyeball) to be automated, perhaps with a visual diff tool such as PhantomCSS or a bespoke solution with Selenium.
