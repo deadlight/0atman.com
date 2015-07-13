@@ -10,8 +10,7 @@ We've got a now css framework at Canonical, [Vanilla](http://design.canonical.co
 ### Open Source Build
 We wanted the build to be as automated and close to CI/CD pronciples as possible. Here's what happens:
 
-Commiting to our [github repository](https://github.com/ubuntudesign/vanilla-framework) kicks off a travis build that runs out gulp tests, which include [sasslint](https://github.com/brigade/scss-lint/).
-and we also use [david-dm.org](https://david-dm.org/ubuntudesign/vanilla-framework#info=devDependencies) to make sure our npm dependencies are fresh. Both these have nice badges we can link to right from our github page, so the first thing people see is the heath of our project. I really likt his, it keeps us honest.
+Commiting to our [github repository](https://github.com/ubuntudesign/vanilla-framework) kicks off a travis build that runs out gulp tests, which include [sasslint](https://github.com/brigade/scss-lint/). And we also use [david-dm.org](https://david-dm.org/ubuntudesign/vanilla-framework#info=devDependencies) to make sure our npm dependencies are fresh. Both these have nice badges we can link to right from our github page, so the first thing people see is the heath of our project. I really like this, it keeps us honest.
 
 Not everything can be done with travis, however, as publishing to npm and our demo site require some private credentials. For the confidential build, we use Jenkins. (formally Hudson).
 
