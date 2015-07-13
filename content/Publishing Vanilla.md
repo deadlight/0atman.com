@@ -6,7 +6,7 @@ Tags: canonical, ubuntu, node, scss
 
 
 ## Edit scss
-Make tweaks to vanilla, as mentioned by [Ant](http://design.canonical.com/author/ya-bo-ng/) [here](http://design.canonical.com/2015/06/introducing-vanilla/).
+Here at Canonical, we have recently but together a scss framework, as mentioned by [Ant](http://design.canonical.com/author/ya-bo-ng/) [here](http://design.canonical.com/2015/06/introducing-vanilla/).
 
 ## Build
 Commiting to our [github repository](https://github.com/ubuntudesign/vanilla-framework) kicks off a travis build that runs out gulp tests, which include [sasslint](https://github.com/brigade/scss-lint/).
