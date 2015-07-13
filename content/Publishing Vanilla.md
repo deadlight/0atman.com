@@ -29,10 +29,10 @@ Our Jenkins build does a few things:
 
 We use this script in a Jenkins build that we kick off with a few parameters, `point`, `minor` and `major` to indicate the version to be updated in package.json. This allows our devs push-button releases on the fly.
 
-After less than 30 seconds, our [demo site](http://ubuntudesign.github.io/vanilla-framework/demo/), which showcases our `elements?` and their usage, is updated. This demo is styled with the latest version of Vanilla, and also serves as documentation and a test of the CSS.
+After less than 30 seconds, our [demo site](http://ubuntudesign.github.io/vanilla-framework/demo/), which showcases our containers and their usage, is updated. This demo is styled with the latest version of Vanilla, and also serves as documentation and a test of the CSS.
 
 ### The Future
-It'd be nice for the demo test (which we currently just eyeball) to be automated, perhaps with a visual diff tool such as [PhantomCSS](https://github.com/Huddle/PhantomCSS) or a bespoke solution with Selenium.
+It'd be nice for the regression test (which we currently just eyeball) to be automated, perhaps with a visual diff tool such as [PhantomCSS](https://github.com/Huddle/PhantomCSS) or a bespoke solution with Selenium.
 
 ### Wrap-up
 Vanilla is ready to hack on, go get it [here](http://design.canonical.com/2015/06/introducing-vanilla/) and tell us what you think! (And yes, you can get it in colours other than _Ubuntu Orange_)
