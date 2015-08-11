@@ -29,7 +29,7 @@ Our Jenkins build does a few things:
 
 We use this script in a Jenkins build that we kick off with a few parameters, `point`, `minor` and `major` to indicate the version to be updated in package.json. This allows our devs push-button releases on the fly, with the same build, from bugfixes all the way up to stable releases (1.0.0)
 
-After less than 30 seconds, our [demo site](http://ubuntudesign.github.io/vanilla-framework/demo/), which showcases our containers and their usage, is updated. This demo is styled with the latest version of Vanilla, and also serves as documentation and a test of the CSS. We take advantage of github's html publishing feature, [Github Pages](https://pages.github.com/).
+After less than 30 seconds, our [demo site](http://ubuntudesign.github.io/vanilla-framework/demo/), which showcases framework elements and their usage, is updated. This demo is styled with the latest version of Vanilla, and also serves as documentation and a test of the CSS. We take advantage of github's html publishing feature, [Github Pages](https://pages.github.com/).
 
 ### The Future
 It'd be nice for the regression test (which we currently just eyeball) to be automated, perhaps with a visual diff tool such as [PhantomCSS](https://github.com/Huddle/PhantomCSS) or a bespoke solution with Selenium.
