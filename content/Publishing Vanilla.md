@@ -2,15 +2,15 @@ Title: Publishing Vanilla
 Category: Coding
 Status: draft
 Summary: Being a description on how we publish our CSS framework at Canonical
-Tags: canonical, ubuntu, node, scss
+Tags: canonical, ubuntu, node, Sass
 
 
-We've got a new CSS framework at Canonical, named [Vanilla](http://ubuntudesign.github.io/vanilla-framework/). My colleague [Ant](http://design.canonical.com/author/ya-bo-ng/) has a great write-up [introducing Vanilla](http://design.canonical.com/2015/06/introducing-vanilla/). Essentially it's a CSS microframework powered by scss. The build process consists of two steps, an open source build, and a private build.
+We've got a new CSS framework at Canonical, named [Vanilla](http://ubuntudesign.github.io/vanilla-framework/). My colleague [Ant](http://design.canonical.com/author/ya-bo-ng/) has a great write-up [introducing Vanilla](http://design.canonical.com/2015/06/introducing-vanilla/). Essentially it's a CSS microframework powered by Sass. The build process consists of two steps, an open source build, and a private build.
 
 ### Open Source Build
 While there are inevitably componants that need to be kept private (keys, tokens, etc.) being Canonical, we want to keep much of the build in the open, in addition to the code. We wanted the build to be as automated and close to CI/CD principles as possible. Here's what happens:
 
-Committing to our [github repository](https://github.com/ubuntudesign/vanilla-framework) kicks off a [travis](https://travis-ci.org/ubuntudesign/vanilla-framework) build that runs [gulp](http://gulpjs.com/) tests, which include [sasslint](https://github.com/brigade/scss-lint/). And we also use [david-dm.org](https://david-dm.org/ubuntudesign/vanilla-framework#info=devDependencies) to make sure our npm dependencies are up to date. All of these have nice badges we can link to right from our github page, so the first thing people see is the heath of our project. I really like this, it keeps us honest, and informs the community.
+Committing to our [github repository](https://github.com/ubuntudesign/vanilla-framework) kicks off a [travis](https://travis-ci.org/ubuntudesign/vanilla-framework) build that runs [gulp](http://gulpjs.com/) tests, which include [Sasslint](https://github.com/brigade/Sass-lint/). And we also use [david-dm.org](https://david-dm.org/ubuntudesign/vanilla-framework#info=devDependencies) to make sure our npm dependencies are up to date. All of these have nice badges we can link to right from our github page, so the first thing people see is the heath of our project. I really like this, it keeps us honest, and informs the community.
 
 Not everything can be done with travis, however, as publishing Vanilla to [npm](https://www.npmjs.com/), updating our project page and demo site require some private credentials. For the confidential build, we use [Jenkins](https://jenkins-ci.org/). (formally Hudson, a java-based build management system.).
 
@@ -19,9 +19,9 @@ Our Jenkins build does a few things:
 
 0. Increment the package.json version number
 0. npm publish
-0. Build sass with `npm install`
+0. Build Sass with `npm install`
 0. Upload styles.css to our assets server
-0. Update sassdoc
+0. Update Sassdoc
 0. Update demo site with new CSS
 
 
