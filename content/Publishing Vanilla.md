@@ -1,6 +1,5 @@
 Title: Publishing Vanilla
 Category: Coding
-Status: draft
 Summary: Being a description on how we publish our CSS framework at Canonical
 Tags: canonical, ubuntu, node, Sass
 
