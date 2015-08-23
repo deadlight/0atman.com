@@ -2,7 +2,7 @@ Title: Pi Portable
 Date: 2015-08-22 15:00
 Category: coding
 
-My plan is to connect this monitor:
+My plan is to connect [this monitor](http://www.amazon.com/AOC-E1649FWU-USB-Powered-Portable-Monitor/dp/B005SEZR0G/ref=sr_1_1/182-8953425-3346443?ie=UTF8&qid=1440360553&sr=8-1&keywords=usb+monitors):
 
 ![USB Monitor](http://ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B005SEZR0G&Format=_SL250_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=geblbyjo-20)
 
