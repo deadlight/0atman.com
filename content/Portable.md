@@ -10,4 +10,4 @@ To the Pi, and then both to a large battery pack via [this power meter](http://w
 
 Based on the Pi's draw of about 2W, and the monitor's draw of about 1W, I think (at 5V) that an 11Ah battery could power them for 18h.
 
-This is worth investigating, watch this space...
+This is worth investigating, watch this space!
