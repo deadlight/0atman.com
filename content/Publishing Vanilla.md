@@ -17,7 +17,7 @@ Not everything can be done with travis, however, as publishing Vanilla to [npm](
 Our Jenkins build does a few things:
 
 0. Increment the package.json version number
-0. npm publish
+0. npm publish [(package)](https://www.npmjs.com/package/vanilla-framework)
 0. Build Sass with `npm install`
 0. Upload styles.css to our assets server
 0. Update Sassdoc
