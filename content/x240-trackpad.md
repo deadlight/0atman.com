@@ -1,5 +1,5 @@
 Title: Getting the trackpoint working on the Thinkpad X240
-Date: 2015-19-24 14:00
+Date: 2015-09-24 14:00
 Category: coding
 
 TrackPoint contentscrolling doesn't work out of box, but you can easily fix it by yourself. All you need is:
