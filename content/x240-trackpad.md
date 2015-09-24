@@ -17,4 +17,6 @@ TrackPoint scrolling doesn't work out of box, but you can easily fix it by yours
 
 5) Reboot
 
+Don't forget to disable your touchpad in the bios to avoid the cursor wobbling when you click!
+
 [source](https://ask.fedoraproject.org/en/question/46089/x240-scroll-with-trackpoint-and-use-fingerprint-reader/)
