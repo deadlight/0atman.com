@@ -1,33 +1,20 @@
-Title: Getting the trackpoint working on the Thinkpad X240
+Title: Getting the trackpoint working in ubuntu on the Thinkpad X240
 Date: 2015-09-24 14:00
 Category: coding
 
-Modification of:
-https://ask.fedoraproject.org/en/question/46089/x240-scroll-with-trackpoint-and-use-fingerprint-reader/
 
 TrackPoint scrolling doesn't work out of box, but you can easily fix it by yourself.
 
- 1) Add `psmouse.proto=bare` option to you kernel during boot
+1) Add `psmouse.proto=bare` option to you kernel during boot
 
-Open `/etc/default/grub`
+2) Modify `/etc/default/grub` with the GRUB_CMDLINE_LINUX option (`GRUB_CMDLINE_LINUX="psmouse.proto=bare quiet splash`)
 
-Modify the GRUB_CMDLINE_LINUX option (e.g. `GRUB_CMDLINE_LINUX="psmouse.proto=bare` ....)
+3) As root run `sudo update-grub`
 
-As a root run `sudo update-grub`
+4) Create /usr/share/X11/xorg.conf.d/11-trackpoint-wheel-emulation.conf
 
- 2) Create /usr/share/X11/xorg.conf.d/11-trackpoint-wheel-emulation.conf
+<script src="https://gist.github.com/0atman/b08bee673d6381d7f1f2.js"></script>
 
-:::python
-  Section "InputClass"
-	    Identifier      "Trackpoint Wheel Emulation"
-	    MatchProduct    "PS/2 Generic Mouse"
-	    MatchDevicePath "/dev/input/event*"
-	    Option          "EmulateWheel" "true"
-	    Option          "EmulateWheelButton" "2"
-	    Option          "EmulateWheelTimeout" "200"
-	    Option          "YAxisMapping" "4 5"
-	    Option          "XAxisMapping" "6 7"
-	EndSection
+5) Reboot
 
-
-3) Reboot
+[source](https://ask.fedoraproject.org/en/question/46089/x240-scroll-with-trackpoint-and-use-fingerprint-reader/)
