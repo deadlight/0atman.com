@@ -6,13 +6,13 @@ Category: coding
 	:::python
 	def get_latest(no_download=False):
 	    return bool(no_download)
-  ##################################
-  $ fab get_latest                 
-  False
-  $ fab get_latest:no_download     
-  True
-  $ fab get_latest:no_download=False     
-  True
+  	##################################
+  	$ fab get_latest                 
+  	False
+  	$ fab get_latest:no_download     
+  	True
+  	$ fab get_latest:no_download=False     
+  	True
   
 Everything passed in to fabric is a string, so be aware that `bool("0") == True` and `bool("False") == True`.
 
