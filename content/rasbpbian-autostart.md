@@ -3,6 +3,7 @@ Date: 2015-11-05 14:00
 Category: coding
 
 1 Install Chromium
+
 2 Create a file called `~/.config/autostart/chromium.desktop` with the following contents:
 
 ```ini
