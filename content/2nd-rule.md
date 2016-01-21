@@ -1,4 +1,4 @@
-Title: 0atman's First Rule
+Title: 0atman's Second Rule
 Date: 2016-01-21 20:50
 Category: coding
 
