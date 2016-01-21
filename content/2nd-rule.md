@@ -11,3 +11,5 @@ It's partly pragmatism:
 > What should be decisive in the decision to encapsulate functionality is not code length but semantic distance between what the function does and how it does it.
 
 _Refactoring, Martin Fowler, p. 76-77_
+
+But it's also that, given the above, comments are very likely to be code smells, indicating bad code that NEEDED a comment.
