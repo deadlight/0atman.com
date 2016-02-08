@@ -1,4 +1,4 @@
-Title: 0atman's Second Rule
+Title: 0atman's Third Rule
 Date: 2016-02-08 21:51
 Category: coding
 
