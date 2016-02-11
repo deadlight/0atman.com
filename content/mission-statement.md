@@ -13,4 +13,4 @@ Bringing to the table our capitalized reputation proactively overseeing day-to-d
 
 And gaining traction with our resources in the marketplace it's mission-critical to stay incentivized. Our business will foster flexible solutions for our customer base.
 
-> It's a paradigm shift
+[It's a paradigm shift](https://www.youtube.com/watch?v=GyV_UG60dD4)
