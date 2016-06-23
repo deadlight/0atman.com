@@ -2,7 +2,7 @@ Title: The European Union was created to stop WW3.
 Date: 2016-06-23 12:50
 Category: politics
 
-##The European Union's importance is simple and profound, in a way that people have forgotten. 
+*The European Union's importance is simple and profound, in a way that people have forgotten. *
 
 
  - It's not about improving trade ([though it does](http://www.ft.com/cms/s/2/3748166e-3151-11e6-ad39-3fee5ffe5b5b.html)).
