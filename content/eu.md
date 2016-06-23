@@ -1,4 +1,4 @@
-Title: The European Union was created to stop WW3.
+Title: The European Union was created to stop WW3
 Date: 2016-06-23 12:50
 Category: politics
 
