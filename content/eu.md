@@ -9,7 +9,7 @@ Category: politics
  - Its not about upholding universal human rights ([though it does](https://en.wikipedia.org/wiki/European_Court_of_Human_Rights)).
  - Nor is it about standing up to international corporate amorality ([though it does](http://www.nytimes.com/2015/04/16/business/international/european-union-google-antitrust-case.html?_r=0))
 
-The European Union was created, quite simply, to prevent the atrocities of WW2 happening again.
+The European Union was created, quite simply, [to prevent](https://en.wikipedia.org/wiki/European_Union#History) the atrocities of WW2 happening again.
 It is difficult to imagine the term _"to stop WW3"_ used without hyperbole, but this is one of the few cases where it can, and must be.
 
 
