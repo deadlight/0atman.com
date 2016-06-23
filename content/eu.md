@@ -14,3 +14,5 @@ It is difficult to imagine the term _"to stop WW3"_ used without hyperbole, but 
 
 
 [Go vote](http://www.bbc.co.uk/news/uk-politics-eu-referendum-36584905), you have until 10pm today.
+
+![](http://i.imgur.com/ZR0Sa2Y.jpg)
