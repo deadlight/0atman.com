@@ -17,13 +17,16 @@ It's at this point in our story that along comes a spider.
 ![farage](http://i.imgur.com/ehS88Kg.jpg)
 
 He's a man seemingly without a conscience, for whom the ends always justify the means, and it is he who suggests that their target should not be an enemy of the country but rather the country itself. Three targets are chosen for a false-flag "terrorist attack": a school, a tube station and a water treatment plant. 
+Several hundred die. Fueled by the media, fear and panic spread quickly, fracturing and dividing the country until, at last, the true goal comes into view. 
 
 ![protest](http://i.imgur.com/1t7ONFt.jpg)
 
-Several hundred die. Fueled by the media, fear and panic spread quickly, fracturing and dividing the country until, at last, the true goal comes into view. Before the terrorist crisis, no-one would have predicted the results of the election that year, no-one. And then, not long after the election, lo and behold a miracle. Some believe it was the work of God himself, but it was a security company controlled by certain party members that made them all obscenely rich.
+Before the terrorist crisis, no-one would have predicted the results of the election that year, no-one. And then, not long after the election, lo and behold a miracle. Some believe it was the work of God himself, but it was a security company controlled by certain party members that made them all obscenely rich.
+
+A year later, several extremists are tried, found guilty and executed while a memorial is built to canonise their victims.
 
 ![arrest](http://i.imgur.com/ycjQIAc.jpg)
 
-A year later, several extremists are tried, found guilty and executed while a memorial is built to canonise their victims. But the end result, the true genius of the plan was the fear. Fear became the ultimate tool of this government, and through it, our politician was ultimately appointed to the position of Prime Minister.
+ But the end result, the true genius of the plan was the fear. Fear became the ultimate tool of this government, and through it, our politician was ultimately appointed to the position of Prime Minister.
 
 The rest, as they say, is history.
