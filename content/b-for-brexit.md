@@ -9,7 +9,7 @@ He's a deeply religious man and a member of the Conservative party. He's complet
 
 ![boris](http://i.imgur.com/9BgWR07.jpg)
 
-Eventually, his party launches a special project in the name of "national security". At first, it's believed to be a search for terrorists and is pursued without regard to its cost. However, the true goal of this project is power. Complete and total hegemonic domination.
+Eventually, his party launches a special project in the name of "national security". At first, it's believed to be radical anti-terror measures and is pursued without regard to its cost. However, the true goal of this project is power. Complete and total hegemonic domination.
 The project, however, is shut down by a human rights investigation, but the efforts of those involved are not in vain, for a new ability to wage war is born. Imagine surveillance, the most complete surveillance you can, and then imagine that you and you alone control it, but if your ultimate goal is power, how best to use such a weapon?
 
 It's at this point in our story that along comes a spider.
