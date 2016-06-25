@@ -57,3 +57,6 @@ A year later, several extremists are tried, found guilty and executed while a me
  But the end result, the true genius of the plan was the fear. Fear became the ultimate tool of this government, and through it, our politician was ultimately appointed to the position of Prime Minister.
 
 The rest, as they say, is history.
+
+
+Text adapted from [V For Vendetta](http://www.imdb.com/title/tt0434409/), plot suggested by the great British public.
