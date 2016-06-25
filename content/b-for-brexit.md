@@ -58,5 +58,8 @@ A year later, several extremists are tried, found guilty and executed while a me
 
 The rest, as they say, is history.
 
+</br>
+</br>
+</br>
 
-Text adapted from [V For Vendetta](http://www.imdb.com/title/tt0434409/), plot suggested by the great British public.
+> Text adapted from [V For Vendetta](http://www.imdb.com/title/tt0434409/), plot suggested by the great British public.
