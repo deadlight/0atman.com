@@ -8,7 +8,7 @@ I am writing in regard to the _"Representation of the People (Proportional Repre
 
 A proportional voting system where everyone's vote counts is a progressive reform to our democracy whose time *has come*.
 
-I want the Labour party to be the party to best represent the people. On the occasion that it does not, I want to be able to vote for another party that does, WITHOUT letting the tories take advantage of a fractured Left.
+I want the Labour party to be the party to best represent the people. On the occasion that it does not, I want to be able to vote for another party that does, WITHOUT letting the tories take advantage of a fractured Left. If I vote, say, Green, it is MUCH BETTER to get my second choice, Labour, than the Conservatives.
 
 I want to vote for progressive, modern, socialist policymakers without throwing my vote away and letting in an unpopular conservative government, as has happened TWICE now.
 (You will recall last time this happened, they privatised our railways. This time they're doing their best to do the same with our NHS. Give them three terms, they might succeed.)
