@@ -20,5 +20,5 @@ Statistics and polls show that Brits still believe in the liberal post-war princ
 Give the people the tools to vote for the policies you, Kate Hoey, believe in, even when your party does not.
 
 Yours sincerely,
-> Tristram Oaten
-> Lambeth
+
+> 0atman
