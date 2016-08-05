@@ -2,7 +2,7 @@ Title: Docker's Manifest Destiny
 Date: 2016-08-05 16:00
 Category: coding
 
-![http://i.imgur.com/9iRRgug.jpg](American Progress)
+![American Progress](http://i.imgur.com/9iRRgug.jpg)
 
 I expose myself to no risk making the statement that if you are not containerising your app, you are wrong.
 
