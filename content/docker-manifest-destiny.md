@@ -4,7 +4,7 @@ Category: coding
 
 ![American Progress](http://i.imgur.com/9iRRgug.jpg)
 
-I expose myself to no risk making the statement that if you are not containerising your app, you are wrong.
+I expose myself to no risk when I make the statement that if you are not containerising your app, you are wrong.
 
 Maybe your current architecture doesn't lend itself to containerisation - your current architecture is wrong.
 Maybe you are running on platform that doesn't support containers - your platform is now obsolete.
