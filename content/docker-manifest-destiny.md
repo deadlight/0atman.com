@@ -10,7 +10,7 @@ Maybe your current architecture doesn't lend itself to containerisation - your c
 Maybe you are running on platform that doesn't support containers - your platform is now obsolete.
 Maybe you're just one developer hacking together something experimental on your own machine - you are only hurting you own productivity.
 
-Just because you *can* write software without using containers, doesn't mean you *should* [article]
+Just because you *can* write software without using containers, doesn't mean you *should*
 
 Just as we don't have to chose to use processes, it's just how we run work on an OS, there is no longer a need to choose Docker, it's just how we do things now.
 
