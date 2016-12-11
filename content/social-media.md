@@ -3,9 +3,7 @@ Date: 2016-12-11 20:00
 Category: privacy
 
 
-# Social Media
-
-Social Media. We hate it, but we can't get enough of it. It's so useful, but the subtle allure of the infinitly-scolling timeline is a dangerous, unproductive time sink.
+We hate it, but we can't get enough of it. It's so useful, but the subtle allure of the infinitly-scolling timeline is a dangerous, unproductive time sink.
 
 Here's how to fix it: un[follow/subscribe/watch] EVERYONE.
 
