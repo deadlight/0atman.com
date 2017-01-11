@@ -1,0 +1,11 @@
+Title: The stars are right, I'm taking a sabbatical. 
+Date: 2017-01-11 22:20
+Category: life
+
+My girlfriend & I are going to [Wudang Mountain](http://www.wudanggongfu.com/), in the central province of Hubei, China, to study at a Daoist academy for 2 months. The syllabus contains [qigong](https://en.wikipedia.org/wiki/Qigong), [tai chi](https://en.wikipedia.org/wiki/Tai_chi), as well as meditation and other esoterica. I will use my spare time to study Mandarin. 
+
+I'm excited about this rather unique opportunity to lay a foundation of mental and physical health for us for years to come. 
+
+Our affairs are tied up, our bags packed. See you in March!
+
+![](http://i.imgur.com/SOmiEqk.jpg)
