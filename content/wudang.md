@@ -1,8 +1,7 @@
-Title: Sabbatical
+Title: The stars are right, I'm taking a sabbatical.
 Date: 2017-01-20 17:20
 Category: life
 
-## The stars are right, I'm taking a sabbatical. 
 
 ![](http://i.imgur.com/SOmiEqk.jpg)
 
