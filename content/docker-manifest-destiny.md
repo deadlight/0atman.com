@@ -1,4 +1,4 @@
-Title: Shipping Containers Killed Lonndon's Shipping Industry
+Title: Shipping Containers Killed London's Shipping Industry
 Date: 2016-08-05 16:00
 Category: coding
 
