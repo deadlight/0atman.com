@@ -12,4 +12,4 @@ Yes.
 
 ### 2017-07-31 EDIT:
 
-This revealation started me on the path to presenting the magic of macros and homoiconicity at a Skyscanner Lightning Talk. Here are my fully-notated slides: https://docs.google.com/presentation/d/1qEmCWnCR82pOm4sp5FTTVr8TbbtRmWbcjD1dOvcnvpU/
+This revealation started me on the path to presenting the magic of macros and homoiconicity at a Skyscanner Lightning Talk. My slides are [here](https://docs.google.com/presentation/d/1qEmCWnCR82pOm4sp5FTTVr8TbbtRmWbcjD1dOvcnvpU/).
