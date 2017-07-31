@@ -9,3 +9,7 @@ Yes.
 > If Rich [Hickey] didn't want a case statement, but I did, I can have one.
 
 [[stackoverflow]](https://stackoverflow.com/questions/43973727/clojure-can-macros-do-something-that-couldnt-be-done-with-a-function)
+
+### 2017-07-31 EDIT:
+
+This revealation started me on the path to presenting the magic of macros and homoiconicity at a Skyscanner Lightning Talk. Here are my fully-notated slides: https://docs.google.com/presentation/d/1qEmCWnCR82pOm4sp5FTTVr8TbbtRmWbcjD1dOvcnvpU/
