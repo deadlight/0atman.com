@@ -123,3 +123,7 @@ hi
 ## Prior Art / Acknowledgements
 
 Blaze is currently a hacked-together LP tool that is only suitable for one-off scripts. I borrowed the awk code-fence-stripping code from [@trauber](https://gist.github.com/trauber/4955706).
+
+
+## And the name?
+Blaze is lit, bro.
