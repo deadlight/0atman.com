@@ -19,7 +19,30 @@ The second category I think is worth exploring.
 
 It is into this backdrop I present [Blaze](https://gist.github.com/0atman/5ea526a3ae26409da50dd7697eb700e8).
 
+Blaze is a drop-in replacement for `/usr/bin/env` in your scripts.
+
+
+
+Blaze's trick, is that if it is called with a `.md` file, it only executes code inside triple-backtick codefences:
+
 Blaze is tiny:
 
 <script src="https://gist.github.com/0atman/5ea526a3ae26409da50dd7697eb700e8.js"></script>
 
+But what it gives you is the ability to execute your markdown files as though they were scripts.
+
+## Overhead
+Blaze introduces minimal startup overhead, somewhere between 5-20ms, an almost zero runtime overhead (`sh` is running, I suppose).
+
+### Python Shebang
+```shell
+λ ./py-test.py
+hi
+./py-test.py  0.02s user 0.00s system 94% cpu 0.025 total
+```
+
+### Blaze Shebang
+```shell
+λ ./blaze-test.py
+hi
+./blaze-test.py  0.02s user 0.00s system 67% cpu 0.030 total
