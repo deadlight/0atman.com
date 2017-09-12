@@ -57,7 +57,7 @@ print("run", arrow.now().humanize())  # blaze only processes .md files, plain sc
 
 Blaze's REAL trick, is that if it is called with a `.md` file, it only executes code inside triple-backtick codefences, as in this all-encompasing example of a literate program with built-in requirements:
 
-```python
+````python
 #!blaze pex flask flask_restful --
 
 # Imports
@@ -97,7 +97,7 @@ After we have created everything, we run the flask werkzeug server.
 if __name__ == '__main__':
     app.run()
 ``
-```
+````
 
 > (double backticks should be triple in this example)
 
