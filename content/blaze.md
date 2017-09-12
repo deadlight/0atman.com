@@ -21,7 +21,22 @@ It is into this backdrop I present [Blaze](https://gist.github.com/0atman/5ea526
 
 ## Blaze is Tiny:
 
-<script src="https://gist.github.com/0atman/2a96b82ab05d7f02c28109cc9de28ebf.js"></script>
+```shell
+#!/usr/bin/env sh
+args=$1
+script=$2
+
+file_extension=$(echo $script |awk -F . '{if (NF>1) {print $NF}}')
+
+if [ "$file_extension" = "md" ]
+then
+    cat $script | awk '{ if (/^```/) { i++; next } if ( i % 2 == 1) { print } }' > $script.out
+    $args $script.out
+    rm $script.out
+else
+    $args $script
+fi
+```
 
 But what it gives you is the ability to execute your markdown files as though they were scripts: It is a drop-in replacement for `/usr/bin/env`:
 
