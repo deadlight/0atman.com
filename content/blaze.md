@@ -76,28 +76,31 @@ api = Api(app)
 We define a single `HelloWorld` resource, that responds with a simple json
 object on a `GET` request.
 
-```python
+``python
 class HelloWorld(Resource):
     def get(self):
         return {'hello': 'world'}
-```
+``
 
 # Routing
 `api.add_resource()` wires the `Resource` class `HelloWorld` into the flask
 router at `/`.
 
-```
+``
 api.add_resource(HelloWorld, '/')
-```
+``
 
 # Run Server
 After we have created everything, we run the flask werkzeug server.
 
-```
+``
 if __name__ == '__main__':
     app.run()
+``
 ```
-````
+
+> (double backticks should be triple, but that messes with markdown highlighting - sorry!)
+
 Magic, right?
 
 ## Overhead
