@@ -19,7 +19,7 @@ The second category I think is worth exploring.
 
 It is into this backdrop I present [Blaze](https://gist.github.com/0atman/5ea526a3ae26409da50dd7697eb700e8).
 
-Blaze is tiny:
+## Blaze is Tiny:
 
 <script src="https://gist.github.com/0atman/2a96b82ab05d7f02c28109cc9de28ebf.js"></script>
 
@@ -54,3 +54,8 @@ hi
 λ ./blaze-test.py
 hi
 ./blaze-test.py  0.02s user 0.00s system 67% cpu 0.030 total
+```
+
+## Prior Art / Acknowledgements
+
+Blaze is currently a hacked-together LP tool that is only suitable for one-off scripts. I borrowed the awk code-fence-stripping code from [@trauber](https://gist.github.com/trauber/4955706).
