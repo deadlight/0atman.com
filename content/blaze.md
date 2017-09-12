@@ -57,9 +57,49 @@ print("run", arrow.now().humanize())  # blaze only processes .md files, plain sc
 
 Blaze's REAL trick, is that if it is called with a `.md` file, it only executes code inside triple-backtick codefences, as in this all-encompasing example of a literate program with built-in requirements:
 
-<script src="https://gist.github.com/0atman/c9ebb7e7256d7a144ac3587c1ad7bfec.js"></script>
+```python
+#!blaze pex flask flask_restful --
 
-> (the file should end in .md, I've ended it in .py for syntax-highlighting reasons)
+# Imports
+First the imports, this demo requires the `flask_restful` package.
+Then we set up the Flask wsgi application object, `app` and the api wrapper, `api`.
+
+``python
+from flask import Flask
+from flask_restful import Resource, Api
+
+app = Flask(__name__)
+api = Api(app)
+``
+
+# Flask Restful resources
+We define a single `HelloWorld` resource, that responds with a simple json
+object on a `GET` request.
+
+``python
+class HelloWorld(Resource):
+    def get(self):
+        return {'hello': 'world'}
+``
+
+# Routing
+`api.add_resource()` wires the `Resource` class `HelloWorld` into the flask
+router at `/`.
+
+``
+api.add_resource(HelloWorld, '/')
+``
+
+# Run Server
+After we have created everything, we run the flask werkzeug server.
+
+``
+if __name__ == '__main__':
+    app.run()
+``
+```
+
+> (double backticks should be triple in this example)
 
 Magic, right?
 
