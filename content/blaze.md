@@ -40,11 +40,18 @@ fi
 
 But what it gives you is the ability to execute your markdown files as though they were scripts: It is a drop-in replacement for `/usr/bin/env`:
 
-<script src="https://gist.github.com/0atman/491f0aeda776c9cbbdf0a30f872e2199.js"></script>
+```python
+#!blaze python
+print("hi")
+```
 
 It then allows as many paramaters to be passed to your interpreter as you like (unlike normal shebangs), which means you can use tools like [pex](https://github.com/pantsbuild/pex):
 
-<script src="https://gist.github.com/0atman/f673844a92ac3e24ab24b3fe45b299aa.js"></script>
+```python
+#!blaze pex arrow --
+import arrow
+print("run", arrow.now().humanize())  # blaze only processes .md files, plain scripts can be run as-normal
+```
 
 > (Note that we are able to use pex's ephemeral venv trick to run python with any requirements pre-installed)
 
