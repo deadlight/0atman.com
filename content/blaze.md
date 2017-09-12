@@ -126,4 +126,4 @@ Blaze is currently a hacked-together LP tool that is only suitable for one-off s
 
 
 ## And the name?
-Blaze is lit, bro.
+Blaze is lit, bro 😎
