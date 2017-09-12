@@ -98,9 +98,6 @@ if __name__ == '__main__':
     app.run()
 ```
 ````
-
-> (double backticks should be triple in this example)
-
 Magic, right?
 
 ## Overhead
