@@ -19,17 +19,25 @@ The second category I think is worth exploring.
 
 It is into this backdrop I present [Blaze](https://gist.github.com/0atman/5ea526a3ae26409da50dd7697eb700e8).
 
-Blaze is a drop-in replacement for `/usr/bin/env` in your scripts.
-
-
-
-Blaze's trick, is that if it is called with a `.md` file, it only executes code inside triple-backtick codefences:
-
 Blaze is tiny:
 
-<script src="https://gist.github.com/0atman/5ea526a3ae26409da50dd7697eb700e8.js"></script>
+<script src="https://gist.github.com/0atman/2a96b82ab05d7f02c28109cc9de28ebf.js"></script>
 
-But what it gives you is the ability to execute your markdown files as though they were scripts.
+But what it gives you is the ability to execute your markdown files as though they were scripts: It is a drop-in replacement for `/usr/bin/env`:
+
+<script src="https://gist.github.com/0atman/491f0aeda776c9cbbdf0a30f872e2199.js"></script>
+
+It also allows as many paramaters to be passed to your interpreter as you like (unlike normal shebangs), which means you can use tools like [pex](https://github.com/pantsbuild/pex):
+
+<script src="https://gist.github.com/0atman/f673844a92ac3e24ab24b3fe45b299aa.js"></script>
+
+(Note that we are able to use pex's ephemeral venv trick to run python with any requirements pre-installed)
+
+Blaze's REAL trick, is that if it is called with a `.md` file, it only executes code inside triple-backtick codefences, as in this all-encompasing example of a literate program with built-in requirements:
+
+<script src="https://gist.github.com/0atman/c9ebb7e7256d7a144ac3587c1ad7bfec.js"></script>
+
+Magic, right?
 
 ## Overhead
 Blaze introduces minimal startup overhead, somewhere between 5-20ms, an almost zero runtime overhead (`sh` is running, I suppose).
