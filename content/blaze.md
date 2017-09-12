@@ -19,4 +19,7 @@ The second category I think is worth exploring.
 
 It is into this backdrop I present [Blaze](https://gist.github.com/0atman/5ea526a3ae26409da50dd7697eb700e8).
 
+Blaze is tiny:
+
+<script src="https://gist.github.com/0atman/5ea526a3ae26409da50dd7697eb700e8.js"></script>
 
