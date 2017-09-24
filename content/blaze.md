@@ -17,7 +17,7 @@ The first is an evolution of the documentation processors you will be familiar w
 
 The second category I think is worth exploring.
 
-It is into this backdrop I present [Blaze](https://gist.github.com/0atman/5ea526a3ae26409da50dd7697eb700e8).
+It is into this ecosystem I present [Blaze](https://gist.github.com/0atman/5ea526a3ae26409da50dd7697eb700e8).
 
 ## Blaze is Tiny:
 
@@ -32,10 +32,14 @@ if [ "$file_extension" = "md" ]
 then
     cat $script | awk '{ if (/^```/) { i++; next } if ( i % 2 == 1) { print } }' > $script.out
     $args $script.out
+    exit_code=$?
     rm $script.out
 else
     $args $script
 fi
+echo $exit_code
+exit $exit_code
+
 ```
 
 But what it gives you is the ability to execute your markdown files as though they were scripts: It is a drop-in replacement for `/usr/bin/env`:
