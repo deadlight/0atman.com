@@ -36,10 +36,9 @@ then
     rm $script.out
 else
     $args $script
+    exit_code=$?
 fi
-echo $exit_code
 exit $exit_code
-
 ```
 
 But what it gives you is the ability to execute your markdown files as though they were scripts: It is a drop-in replacement for `/usr/bin/env`:
