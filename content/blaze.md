@@ -2,6 +2,8 @@ Title: Blaze: A lightweight literate programing preprocessor
 Date: 2017-09-12 20:40
 Category: tools
 
+![blaze](http://instaco.de/stream/113738)
+
 I've been playing with many literate programming tools since this technique of document-first programming came into my life two years ago.
 
 [Literate programming](https://en.wikipedia.org/wiki/Literate_programming) (LP), a concept that has been around since at least the 80s, is back in the spotlight since the [Eve](http://witheve.com/) language (released by the Eve team headed by Chris Granger of [Light Table](http://lighttable.com) fame) was released to the public in 2015.
