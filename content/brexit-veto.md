@@ -1,4 +1,4 @@
-Title: An open letter to my MP, Kate Hoey
+Title: Brexit Vote Amendment: An open letter to my MP
 Date: 2017-12-14 12:00
 Category: politics
 
