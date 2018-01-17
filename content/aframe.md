@@ -1,0 +1,4 @@
+<!-- Embed Code -->
+<div class="glitch-embed-wrap" style="height: 420px; width: 100%; border: 1px solid #C3C3C3; border-radius: 5px; box-shadow: 4px 4px #C3C3C3; background-color: white; overflow: hidden;">
+  <iframe src="https://glitch.com/embed/#!/embed/aframe-basic-guide?path=index.html&previewHeight=320" style="height: 100%; width: 100%; border: 0;" alt="code example in glitch"></iframe>
+</div>
