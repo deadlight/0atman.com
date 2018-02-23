@@ -1,5 +1,5 @@
 Title: Streaming with Icecast
-Date: 2017-02-23 10:00
+Date: 2018-02-23 10:00
 Category: coding
 
 After years of no satisfactory music radio solution, I researched in earnest how to set up my own broadcast setup, and it was easier than I thought!
@@ -52,4 +52,4 @@ name            = Your Radio Station Name
 
 Then tune in with your favourite streaming client, or even just hitting your.icecast.server:8000 in a browser, the mp3 will stream!
 
-You can't use this to stream spotify to your friends, as that's in breach of the single-listener licencse, before you ask.
+You can't use this to stream spotify to your friends, as that's in breach of the single-listener license, before you ask.
