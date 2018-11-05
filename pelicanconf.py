@@ -75,7 +75,7 @@ SHOW_ARTICLE_AUTHOR = True
 # DISPLAY_CATEGORY_IN_BREADCRUMBS=True
 # DISPLAY_ARTICLE_INFO_ON_INDEX=True
 
-ABOUT_ME = "Professional amateur developer.<br/>Amateur professional composer."
+ABOUT_ME = "Professional amateur<br/>developer.<br/>Amateur professional<br/>composer."
 AVATAR = "/images/hex-moon-black.png"
 BANNER = "/images/composer.png"
 BANNER_SUBTITLE = 'Professional amateur developer.<br/>Amateur professional composer.'
