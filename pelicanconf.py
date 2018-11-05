@@ -78,7 +78,7 @@ SHOW_ARTICLE_AUTHOR = True
 ABOUT_ME = "Professional amateur developer. Amateur professional composer."
 AVATAR = "/images/hex-moon-black.png"
 BANNER = "/images/composer.png"
-BANNER_SUBTITLE = 'Professional amateur developer.\nAmateur professional composer.'
+BANNER_SUBTITLE = 'Professional amateur developer.<br/>Amateur professional composer.'
 BANNER_ALL_PAGES = False
 
 DISPLAY_TAGS_INLINE = True
