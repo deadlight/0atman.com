@@ -75,10 +75,10 @@ SHOW_ARTICLE_AUTHOR = True
 # DISPLAY_CATEGORY_IN_BREADCRUMBS=True
 # DISPLAY_ARTICLE_INFO_ON_INDEX=True
 
-ABOUT_ME = "Gentleman Scientist and generalist"
+ABOUT_ME = "Professional amateur developer. Amateur professional composer."
 AVATAR = "/images/hex-moon-black.png"
 BANNER = "/images/composer.png"
-BANNER_SUBTITLE = 'My bow is all strings'
+BANNER_SUBTITLE = 'Professional amateur developer.\nAmateur professional composer.'
 BANNER_ALL_PAGES = False
 
 DISPLAY_TAGS_INLINE = True
