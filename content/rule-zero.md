@@ -1,4 +1,4 @@
-Title: 0atman's 0th Rule
+Title: 0atman's Rule Zero
 Date: 2018-11-05 15:20
 Category: coding
 
