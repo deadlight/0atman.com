@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Fabric's behaviour for booleans is non-obvious</title>
+  <meta name="description" content="def get_latest(no_download=False):    return bool(no_download)$ fab get_latestFalse$ fab get_latest:no_downloadTrue$ fab get_latest:no_download=FalseTrueEver...">
+
+  <!-- Google Fonts loaded here depending on setting in _data/options.yml true loads font, blank does not-->
+  
+    <link href='//fonts.googleapis.com/css?family=Lato:400,400italic' rel='stylesheet' type='text/css'>
+  
+
+  <!-- Load up MathJax script if needed ... specify in /_data/options.yml file-->
+  
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+  <link rel="stylesheet" type="text/css" href="/css/tufte.css">
+  <!-- <link rel="stylesheet" type="text/css" href="/css/print.css" media="print"> -->
+
+  <link rel="canonical" href="http://0.0.0.0:4000/articles/15/fab-bools">
+
+  <link rel="alternate" type="application/rss+xml" title="0atman" href="http://0.0.0.0:4000/feed.xml" />
+</head>
+
+  <body>
+    <!--- Header and nav template site-wide -->
+<header>
+    <nav class="group">
+        <a href="/"><img class="badge" src="/assets/img/logo.png" alt="CH"></a>
+        
+            
+        
+            
+                
+                    <a href="/">blog</a>
+                
+            
+        
+            
+                
+                    <a href="/about/">About</a>
+                
+            
+        
+            
+                
+                    <a href="/css/print.css"></a>
+                
+            
+        
+            
+        
+    </nav>
+</header>
+
+    <article class="group">
+      <h1>Fabric's behaviour for booleans is non-obvious</h1>
+<p class="subtitle">November 2, 2015</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="k">def</span> <span class="nf">get_latest</span><span class="p">(</span><span class="n">no_download</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">bool</span><span class="p">(</span><span class="n">no_download</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nv">$ </span>fab get_latest
+False
+<span class="nv">$ </span>fab get_latest:no_download
+True
+<span class="nv">$ </span>fab get_latest:no_download<span class="o">=</span>False
+True
+</code></pre></div></div>
+
+<p>Everything passed in to fabric is a string, so be aware that <code class="highlighter-rouge">bool("0") == True</code> and <code class="highlighter-rouge">bool("False") == True</code>.</p>
+
+<p>Bools are a special case, make sure they default to false and you’ll get nice behavior. There seems to be no way to make bool args default to True, and then be overridden by False in code.</p>
+
+
+
+    </article>
+    <span class="print-footer">Fabric's behaviour for booleans is non-obvious - November 2, 2015 - Tristram Oaten</span>
+    <footer>
+  <hr class="slender">
+  <ul class="footer-links">
+    <li><a href="mailto:hate@spam.net"><span class="icon-mail"></span></a></li>    
+    
+      <li>
+        <a href="//www.twitter.com/0atman"><span class="icon-twitter"></span></a>
+      </li>
+    
+      <li>
+        <a href="//github.com/0atman"><span class="icon-github"></span></a>
+      </li>
+    
+      <li>
+        <a href="/feed.xml"><span class="icon-feed"></span></a>
+      </li>
+      
+  </ul>
+<div class="credits">
+<span>&copy; 2019 &nbsp;&nbsp;TRISTRAM OATEN</span></br> <br>
+<span>This site created with the <a href="//github.com/clayh53/tufte-jekyll">Tufte theme for Content-centric blogging </a> in <a href="//jekyllrb.com">Jekyll</a>.</span> 
+</div>  
+</footer>
+  </body>
+</html>

@@ -1,0 +1,463 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>0atman</title>
+    <description></description>
+    <link>http://0.0.0.0:4000/</link>
+    <atom:link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Thu, 04 Jul 2019 19:05:34 +0100</pubDate>
+    <lastBuildDate>Thu, 04 Jul 2019 19:05:34 +0100</lastBuildDate>
+    <generator>Jekyll v3.8.6</generator>
+    
+      <item>
+        <title>0atman's Rule Zero</title>
+        <description>&lt;h2 id=&quot;read-the-error-message-again&quot;&gt;Read the error message again.&lt;/h2&gt;
+
+&lt;p&gt;Error messages are the ghosts of the engineers who came before you trying to tell you something - listen to them!&lt;/p&gt;
+</description>
+        <pubDate>Mon, 05 Nov 2018 15:20:00 +0000</pubDate>
+        <link>http://0.0.0.0:4000/articles/18/rule-zero</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/articles/18/rule-zero</guid>
+        
+        
+        <category>coding</category>
+        
+      </item>
+    
+      <item>
+        <title>Streaming with Icecast</title>
+        <description>&lt;p&gt;After years of no satisfactory music radio solution, I researched in earnest how to set up my own broadcast setup, and it was easier than I thought!&lt;/p&gt;
+
+&lt;p&gt;In essense:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Darkice redirects the sound from your speakers to a remote server&lt;/li&gt;
+  &lt;li&gt;Icecast re-broadcasts that audio to n clients&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Thanks to Ruggero “infiniteproject”, we have a &lt;a href=&quot;https://hub.docker.com/r/infiniteproject/icecast/&quot;&gt;dockerized icecast server&lt;/a&gt;, run it on your favourite container platform with these settings:&lt;/p&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;n&quot;&gt;ICECAST_SOURCE_PASSWORD&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;yourpassword&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;ICECAST_ADMIN_PASSWORD&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;yourpassword&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;ICECAST_RELAY_PASSWORD&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;yourpassword&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;ICECAST_ADMIN_USERNAME&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;DJ_Schmumu&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;ICECAST_ADMIN_EMAIL&lt;/span&gt;     &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dj_schmumu&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;ICECAST_LOCATION&lt;/span&gt;        &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Spaaaace&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;ICECAST_HOSTNAME&lt;/span&gt;        &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;your&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;server&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;here&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;ICECAST_MAX_CLIENTS&lt;/span&gt;     &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;ICECAST_MAX_SOURCES&lt;/span&gt;     &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Then on your local machine, run &lt;a href=&quot;http://darkice.org/&quot;&gt;Darkice&lt;/a&gt;, or the ui, Darksnow, with these settings:&lt;/p&gt;
+
+&lt;div class=&quot;language-ini highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;nn&quot;&gt;[general]&lt;/span&gt;
+&lt;span class=&quot;py&quot;&gt;duration&lt;/span&gt;        &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;0      # duration in s, 0 forever&lt;/span&gt;
+&lt;span class=&quot;py&quot;&gt;bufferSecs&lt;/span&gt;      &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;1      # buffer, in seconds&lt;/span&gt;
+&lt;span class=&quot;py&quot;&gt;reconnect&lt;/span&gt;       &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;yes    # reconnect if disconnected&lt;/span&gt;
+
+&lt;span class=&quot;nn&quot;&gt;[input]&lt;/span&gt;
+&lt;span class=&quot;py&quot;&gt;device&lt;/span&gt;          &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;default # or `pulse' for Pulseaudio&lt;/span&gt;
+&lt;span class=&quot;py&quot;&gt;sampleRate&lt;/span&gt;      &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;44100   # sample rate 11025, 22050 or 44100&lt;/span&gt;
+&lt;span class=&quot;py&quot;&gt;bitsPerSample&lt;/span&gt;   &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;16      # bits&lt;/span&gt;
+&lt;span class=&quot;py&quot;&gt;channel&lt;/span&gt;         &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;2       # 2 = stereo&lt;/span&gt;
+
+&lt;span class=&quot;nn&quot;&gt;[icecast2-0]&lt;/span&gt;
+&lt;span class=&quot;py&quot;&gt;bitrateMode&lt;/span&gt;     &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;vbr       # variable bit rate (`cbr' constant, `abr' average)&lt;/span&gt;
+&lt;span class=&quot;py&quot;&gt;quality&lt;/span&gt;         &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;1.0       # 1.0 is best quality&lt;/span&gt;
+&lt;span class=&quot;py&quot;&gt;format&lt;/span&gt;          &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;mp3       # format. Choose `vorbis' for OGG Vorbis&lt;/span&gt;
+&lt;span class=&quot;py&quot;&gt;bitrate&lt;/span&gt;         &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;256       # bitrate&lt;/span&gt;
+&lt;span class=&quot;py&quot;&gt;server&lt;/span&gt;          &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;your.icecast.server # or IP&lt;/span&gt;
+&lt;span class=&quot;py&quot;&gt;port&lt;/span&gt;            &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;8000      # port for IceCast2 access&lt;/span&gt;
+&lt;span class=&quot;py&quot;&gt;password&lt;/span&gt;        &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;very secure password # source password to the IceCast2 server&lt;/span&gt;
+&lt;span class=&quot;py&quot;&gt;mountPoint&lt;/span&gt;      &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;your_radio_station.mp3  # mount point on the IceCast2 server .mp3 or .ogg&lt;/span&gt;
+&lt;span class=&quot;py&quot;&gt;name&lt;/span&gt;            &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Your Radio Station Name&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Then tune in with your favourite streaming client, or even just hitting your.icecast.server:8000 in a browser, the mp3 will stream!&lt;/p&gt;
+
+&lt;p&gt;You shouldn’t use this to stream spotify to your friends, as that’s in breach of their single-listener license, before you ask.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 23 Feb 2018 10:00:00 +0000</pubDate>
+        <link>http://0.0.0.0:4000/articles/18/icecast</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/articles/18/icecast</guid>
+        
+        
+        <category>coding</category>
+        
+      </item>
+    
+      <item>
+        <title>Aframe.io</title>
+        <description>&lt;p&gt;Aframe.io is nothing short of astonishing:&lt;/p&gt;
+
+&lt;!-- Embed Code --&gt;
+&lt;div class=&quot;glitch-embed-wrap&quot; style=&quot;height: 420px; width: 100%; border: 1px solid #C3C3C3; border-radius: 5px; box-shadow: 4px 4px #C3C3C3; background-color: white; overflow: hidden;&quot;&gt;
+  &lt;iframe src=&quot;https://glitch.com/embed/#!/embed/aframe-basic-guide?path=index.html&amp;amp;previewHeight=320&quot; style=&quot;height: 100%; width: 100%; border: 0;&quot; alt=&quot;code example in glitch&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Wed, 17 Jan 2018 22:00:00 +0000</pubDate>
+        <link>http://0.0.0.0:4000/articles/18/aframe</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/articles/18/aframe</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>The Testable Documentation Manifesto</title>
+        <description>&lt;p&gt;One of the problems with tech documentation (api, installation instructions etc) is that they get stale. APIs change, software and plugins alter their interface and commands, and websites go away.&lt;/p&gt;
+
+&lt;p&gt;To solve this, I propose we write our documentation in a way that can be executed, or verified.&lt;/p&gt;
+
+&lt;p&gt;Luckily, I wrote &lt;a href=&quot;https://gist.github.com/0atman/5ea526a3ae26409da50dd7697eb700e8&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;blaze&lt;/code&gt;&lt;/a&gt; to execute codeblocks inside of markdown, which means that with a little help from a few common unix tools, we can solve this problem.&lt;/p&gt;
+
+&lt;h1 id=&quot;testable-software-installation-example&quot;&gt;Testable Software Installation Example&lt;/h1&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;nb&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt;
+pip &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;badpackage_123183183
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The output of executing the very file you are reading now is:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;$ ./README.md&lt;/p&gt;
+
+  &lt;p&gt;Collecting badpackage_123183183&lt;/p&gt;
+
+  &lt;p&gt;Could not find a version that satisfies the requirement badpackage_123183183 (from versions: )
+No matching distribution found for badpackage_123183183&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;You now can execute your readme instructions as part of your build process (perhaps with a little setup beforehand, such as running it inside a container), and the exit code (in this case 1) will allow you to fail the build if the instructions are out of date.&lt;/p&gt;
+
+&lt;p&gt;You can get the &lt;a href=&quot;https://gist.github.com/0atman/242cf9d6d99f2fbeb182a090213cf74a&quot;&gt;gist&lt;/a&gt; of it here.&lt;/p&gt;
+
+&lt;h3 id=&quot;related&quot;&gt;Related&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://blaze.oat.sh&quot;&gt;blaze&lt;/a&gt;  is lit. It allows language-agnostic literate-style programming&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Sun, 24 Sep 2017 11:00:00 +0100</pubDate>
+        <link>http://0.0.0.0:4000/articles/17/testable-docs</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/articles/17/testable-docs</guid>
+        
+        
+        <category>coding</category>
+        
+      </item>
+    
+      <item>
+        <title>Blaze: A lightweight literate programing preprocessor</title>
+        <description>&lt;p&gt;I’ve been playing with many literate programming tools since this technique of document-first programming came into my life two years ago.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Literate_programming&quot;&gt;Literate programming&lt;/a&gt; (LP), a concept that has been around since at least the 80s, is back in the spotlight since the &lt;a href=&quot;http://witheve.com/&quot;&gt;Eve&lt;/a&gt; language (released by the Eve team headed by Chris Granger of &lt;a href=&quot;http://lighttable.com&quot;&gt;Light Table&lt;/a&gt; fame) was released to the public in 2015.&lt;/p&gt;
+
+&lt;p&gt;While LP’s original concept aimed to create a document-first system whereby the building blocks of the actual code could be read (by the human or compiler) in any order (as it is in Eve), the contemporary state of the art is focused on creating the document-first model with existing procedural languages.&lt;/p&gt;
+
+&lt;p&gt;There are two main kinds of tool in the modern LP category:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Tools that write beautiful documentation based on comments in source code, such as &lt;a href=&quot;http://ashkenas.com/docco/&quot;&gt;Docco&lt;/a&gt; and (a personal favourite) &lt;a href=&quot;https://github.com/gdeer81/marginalia&quot;&gt;Marginalia&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Tools that allow you to execute code-fenced source code within some markup, such as &lt;a href=&quot;https://github.com/zyedidia/Literate&quot;&gt;Literate&lt;/a&gt;, &lt;a href=&quot;https://github.com/jostylr/litpro&quot;&gt;litpro&lt;/a&gt;, and tiny &lt;a href=&quot;https://github.com/vijithassar/lit&quot;&gt;lit&lt;/a&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;The first is an evolution of the documentation processors you will be familiar with, no real innovation has happened in this space since &lt;a href=&quot;https://en.wikipedia.org/wiki/Javadoc&quot;&gt;Javadoc&lt;/a&gt;. (Much though I love &lt;a href=&quot;http://www.sphinx-doc.org/en/stable/index.html&quot;&gt;Sphynx&lt;/a&gt; et al)&lt;/p&gt;
+
+&lt;p&gt;The second category I think is worth exploring.&lt;/p&gt;
+
+&lt;p&gt;It is into this ecosystem I present &lt;a href=&quot;https://gist.github.com/0atman/5ea526a3ae26409da50dd7697eb700e8&quot;&gt;Blaze&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;blaze-is-tiny&quot;&gt;Blaze is Tiny:&lt;/h2&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#!/usr/bin/env sh&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$1&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;script&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$2&lt;/span&gt;
+
+&lt;span class=&quot;nv&quot;&gt;file_extension&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$script&lt;/span&gt; |awk &lt;span class=&quot;nt&quot;&gt;-F&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'{if (NF&amp;gt;1) {print $NF}}'&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$file_extension&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;md&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;then
+    &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cat&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$script&lt;/span&gt; | &lt;span class=&quot;nb&quot;&gt;awk&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'{ if (/^```/) { i++; next } if ( i % 2 == 1) { print } }'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$script&lt;/span&gt;.out
+    &lt;span class=&quot;nv&quot;&gt;$args&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$script&lt;/span&gt;.out
+    &lt;span class=&quot;nv&quot;&gt;exit_code&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$?&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;rm&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$script&lt;/span&gt;.out
+&lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;
+    &lt;span class=&quot;nv&quot;&gt;$args&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$script&lt;/span&gt;
+    &lt;span class=&quot;nv&quot;&gt;exit_code&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$?&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;fi
+&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;exit&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$exit_code&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;But what it gives you is the ability to execute your markdown files as though they were scripts: It is a drop-in replacement for &lt;code class=&quot;highlighter-rouge&quot;&gt;/usr/bin/env&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;#!blaze python
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;hi&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;It then allows as many paramaters to be passed to your interpreter as you like (unlike normal shebangs), which means you can use tools like &lt;a href=&quot;https://github.com/pantsbuild/pex&quot;&gt;pex&lt;/a&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;#!blaze pex arrow --
+&lt;/span&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;arrow&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;run&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arrow&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;now&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;humanize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# blaze only processes .md files, plain scripts can be run as-normal
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;(Note that we are able to use pex’s ephemeral venv trick to run python with any requirements pre-installed)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Blaze’s REAL trick, is that if it is called with a &lt;code class=&quot;highlighter-rouge&quot;&gt;.md&lt;/code&gt; file, it only executes code inside triple-backtick codefences, as in this all-encompasing example of a literate program with built-in requirements:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;#!blaze pex flask flask_restful --
+&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# Imports
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;First&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;the&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;imports&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;this&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;demo&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;requires&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;the&lt;/span&gt; &lt;span class=&quot;sb&quot;&gt;`flask_restful`&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;package&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;Then&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;we&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;up&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;the&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Flask&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;wsgi&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;application&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;object&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;sb&quot;&gt;`app`&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;the&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;api&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;wrapper&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;sb&quot;&gt;`api`&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;
+
+&lt;span class=&quot;sb&quot;&gt;``&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;python&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;flask&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Flask&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;flask_restful&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Resource&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Api&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;app&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Flask&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;__name__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;api&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Api&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;sb&quot;&gt;``&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# Flask Restful resources
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;We&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;define&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;single&lt;/span&gt; &lt;span class=&quot;sb&quot;&gt;`HelloWorld`&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;resource&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;that&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;responds&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;simple&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;json&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;object&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;on&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;sb&quot;&gt;`GET`&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;
+
+&lt;span class=&quot;sb&quot;&gt;``&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;python&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;HelloWorld&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Resource&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'hello'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'world'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;sb&quot;&gt;``&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# Routing
+&lt;/span&gt;&lt;span class=&quot;sb&quot;&gt;`api.add_resource()`&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;wires&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;the&lt;/span&gt; &lt;span class=&quot;sb&quot;&gt;`Resource`&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;HelloWorld&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;`&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;into&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;the&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;flask&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;router&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;at&lt;/span&gt; &lt;span class=&quot;sb&quot;&gt;`/`&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;
+
+&lt;span class=&quot;sb&quot;&gt;``&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;api&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;add_resource&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;HelloWorld&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'/'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;sb&quot;&gt;``&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# Run Server
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;After&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;we&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;have&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;created&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;everything&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;we&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;run&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;the&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;flask&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;werkzeug&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;server&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;
+
+&lt;span class=&quot;sb&quot;&gt;``&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;__name__&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'__main__'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;sb&quot;&gt;``&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;(double backticks should be triple, but that messes with markdown highlighting - sorry!)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Magic, right?&lt;/p&gt;
+
+&lt;h2 id=&quot;overhead&quot;&gt;Overhead&lt;/h2&gt;
+&lt;p&gt;Blaze introduces minimal startup overhead, somewhere between 5-20ms, an almost zero runtime overhead (&lt;code class=&quot;highlighter-rouge&quot;&gt;sh&lt;/code&gt; is running, I suppose).&lt;/p&gt;
+
+&lt;h3 id=&quot;python-shebang&quot;&gt;Python Shebang&lt;/h3&gt;
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;λ ./py-test.py
+hi
+./py-test.py  0.02s user 0.00s system 94% cpu 0.025 total
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;blaze-shebang&quot;&gt;Blaze Shebang&lt;/h3&gt;
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;λ ./blaze-test.py
+hi
+./blaze-test.py  0.02s user 0.00s system 67% cpu 0.030 total
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;prior-art--acknowledgements&quot;&gt;Prior Art / Acknowledgements&lt;/h2&gt;
+
+&lt;p&gt;Blaze is currently a hacked-together LP tool that is only suitable for one-off scripts. I borrowed the awk code-fence-stripping code from &lt;a href=&quot;https://gist.github.com/trauber/4955706&quot;&gt;@trauber&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;and-the-name&quot;&gt;And the name?&lt;/h2&gt;
+&lt;p&gt;Blaze is lit, bro 😎&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://instaco.de/stream/113738&quot; alt=&quot;blaze&quot; /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Tue, 12 Sep 2017 20:40:00 +0100</pubDate>
+        <link>http://0.0.0.0:4000/articles/17/blaze</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/articles/17/blaze</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Clojure: Can macros do something that couldn't be done with a function?</title>
+        <description>&lt;p&gt;Yes.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;When Guido van Rossum proposed adding a case statement to Python, the committee turned him down. So Python has no case statement.&lt;/p&gt;
+
+  &lt;p&gt;If Rich [Hickey] didn’t want a case statement, but I did, I can have one.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://stackoverflow.com/questions/43973727/clojure-can-macros-do-something-that-couldnt-be-done-with-a-function&quot;&gt;[stackoverflow]&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;2017-07-31-edit&quot;&gt;2017-07-31 EDIT:&lt;/h3&gt;
+
+&lt;p&gt;This revealation started me on the path to presenting the magic of macros and homoiconicity at a Skyscanner Lightning Talk. The slides are &lt;a href=&quot;https://docs.google.com/presentation/d/1qEmCWnCR82pOm4sp5FTTVr8TbbtRmWbcjD1dOvcnvpU/&quot;&gt;here&lt;/a&gt;, click the image below to watch:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=Gkwc3332L-0&quot;&gt;&lt;img src=&quot;https://img.youtube.com/vi/Gkwc3332L-0/0.jpg&quot; alt=&quot;clojure macros talk&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Tue, 16 May 2017 16:00:00 +0100</pubDate>
+        <link>http://0.0.0.0:4000/articles/17/clojure-macros</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/articles/17/clojure-macros</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>NISTS New 2017 Password Rules</title>
+        <description>&lt;p&gt;This is actually really awesome, passwords don’t have to suck&lt;/p&gt;
+
+&lt;h2 id=&quot;favor-the-user&quot;&gt;Favor the user&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Make your password policies user friendly and put the burden on the verifier when possible. In other words, we need to stop asking users to do things that aren’t actually improving security.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Much research has gone into the efficacy of many of our so-called “best practices” and it turns out they don’t help enough to be worth the pain they cause.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;size-matters&quot;&gt;Size matters&lt;/h2&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;You should allow a maximum length of at least 64, so no more “Sorry, your password can’t be longer than 16 characters.” We often advise people to use passphrases, so they should be allowed to use all common punctuation characters and any language to improve usability and increase variety.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;no-composition-rules&quot;&gt;No composition rules&lt;/h2&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;What this means is, no more rules that force you to use particular characters or combinations, like those daunting conditions on some password reset pages that say, “Your password must contain one lowercase letter, one uppercase letter, one number, four symbols but not &amp;amp;%#@_, and the surname of at least one astronaut.”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Let people choose freely, and encourage longer phrases instead of hard-to-remember passwords or illusory complexity such as pA55w+rd.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;no-password-hints&quot;&gt;No password hints&lt;/h2&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;None. If I wanted people have a better chance at guessing my password, I’d write it on a note attached to my screen.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;knowledge-based-authentication-kba-is-out&quot;&gt;Knowledge-based authentication (KBA) is out&lt;/h2&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;KBA is when a site says, “Pick from a list of questions – Where did you attend high school? What’s your favourite football team? – and tell us the answer in case we ever need to check that it’s you.”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;no-more-expiration-without-reason&quot;&gt;No more expiration without reason.&lt;/h2&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;This is my favourite piece of advice: If we want users to comply and choose long, hard-to-guess passwords, we shouldn’t make them change those passwords unnecessarily.
+The only time passwords should be reset is when they are forgotten, if they have been phished, or if you think (or know) that your password database has been stolen and could therefore be subjected to an offline brute-force attack.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;source: &lt;a href=&quot;https://nakedsecurity.sophos.com/2016/08/18/nists-new-password-rules-what-you-need-to-know/&quot;&gt;nakedsecurity.sophos.com&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Tue, 02 May 2017 14:00:00 +0100</pubDate>
+        <link>http://0.0.0.0:4000/articles/17/nists</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/articles/17/nists</guid>
+        
+        
+        <category>coding</category>
+        
+      </item>
+    
+      <item>
+        <title>The stars are right, I'm taking a sabbatical.</title>
+        <description>&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/SOmiEqk.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;My girlfriend &amp;amp; I are going to &lt;a href=&quot;http://www.wudanggongfu.com/&quot;&gt;Wudang Mountain&lt;/a&gt;, in the central province of Hubei, China, to study at a Daoist academy for 2 months. The syllabus contains kungfu, &lt;a href=&quot;https://en.wikipedia.org/wiki/Qigong&quot;&gt;qigong&lt;/a&gt;, &lt;a href=&quot;https://en.wikipedia.org/wiki/Tai_chi&quot;&gt;tai chi&lt;/a&gt;, as well as meditation and other esoterica. I will use my spare time to study Mandarin.&lt;/p&gt;
+
+&lt;p&gt;I’m excited about this rather unique opportunity to lay a foundation of mental and physical health for us for years to come.&lt;/p&gt;
+
+&lt;p&gt;Our affairs are tied up, our bags packed. See you in March!&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 20 Jan 2017 17:20:00 +0000</pubDate>
+        <link>http://0.0.0.0:4000/articles/17/wudang</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/articles/17/wudang</guid>
+        
+        
+        <category>life</category>
+        
+      </item>
+    
+      <item>
+        <title>Social Media</title>
+        <description>&lt;p&gt;We hate it, but we can’t get enough of it. It’s so useful, but the subtle allure of the infinitly-scolling timeline is a dangerous, unproductive time sink.&lt;/p&gt;
+
+&lt;p&gt;Here’s how to fix it:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;un[follow/subscribe/watch] EVERYONE.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;facebook&quot;&gt;Facebook&lt;/h1&gt;
+
+&lt;p&gt;Facebook is vastly useful. For many people, the killer feature is how easy it is to organise events. But features such as groups, messaging and polls are great too.&lt;/p&gt;
+
+&lt;p&gt;The timeline makes you hate your friends.&lt;/p&gt;
+
+&lt;p&gt;To fix: Unfollow everyone. Click the timeline options and then click on all of your friends to never see their food pictures and baby photos again. Do this for everyone, &lt;em&gt;without exception&lt;/em&gt;. Yes, that includes your significant other. The goal here is to break the habit of checking facebook. This may take a long time, if you have something of the order of a thousand friends - as many people do.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/GF43QIm.png&quot; alt=&quot;Unfollow&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;After doing this, facebook will be working for YOU: push notifications and/or emails will be your sole prompt to open the app.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/gIuswjS.png&quot; alt=&quot;fb&quot; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;(Bonus tip: When facebook says it’s someones’s birthday, force yourself to post a “happy birthday” message to them, or unfriend them. If you don’t even say hi on someone’s birthday: you are not even acquaintances)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h1 id=&quot;reddit&quot;&gt;Reddit&lt;/h1&gt;
+
+&lt;p&gt;Reddit’s another timesink with actual useful features. Diving into a breaking news story, finding out leaked information about a new product/service, or simply lowering your blood pressure browsing &lt;a href=&quot;https://www.reddit.com/r/aww/&quot;&gt;r/aww&lt;/a&gt; are fantastic.&lt;/p&gt;
+
+&lt;p&gt;Subreddits good, front page bad.&lt;/p&gt;
+
+&lt;p&gt;Unsubscribe from everything:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/j1qHVNj.png&quot; alt=&quot;reddit&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Side-effect: You can still navigate to &lt;code class=&quot;highlighter-rouge&quot;&gt;/r/all&lt;/code&gt;, but good luck wading through all the &lt;code class=&quot;highlighter-rouge&quot;&gt;/r/THE_DONALD&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;/r/EnoughTrumpSpam&lt;/code&gt; noise.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;This technique can be used for almost any social media site. Give it a try, it’s given me the benefits of unsubscribing from these services without losing the genuine benefits.&lt;/p&gt;
+</description>
+        <pubDate>Sun, 11 Dec 2016 20:00:00 +0000</pubDate>
+        <link>http://0.0.0.0:4000/articles/16/social-media</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/articles/16/social-media</guid>
+        
+        
+        <category>privacy</category>
+        
+      </item>
+    
+      <item>
+        <title>A Long View</title>
+        <description>&lt;p&gt;Something to keep in mind:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;It might not feel like it today, but technology and science is a bigger story than Donald Trump. Think about it. Who ran Italy when Galileo made his discoveries? How was Italy even run back then? Who was king during the industrial revolution in England? The quirks and flaws of government leaders are not relevant information when studying the enlightenment. In the long run, the Galileos and James Watts of the world have even more influence than the Napoleons.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;And the fact that I can Google the answer to those above questions — that we have given humanity endless knowledge at the tap of a touchpad — will ultimately be recognized as more important than the identity of whoever sits in the White House, even if he has no attention span and boasts of sexual assaults. As horrible as 9/11 was, the fact that one single corporation might connect almost all of the world’s population on a single service is, in the long run, actually bigger news.” -Steven Levy
+&lt;label for=&quot;bc&quot; class=&quot;margin-toggle sidenote-number&quot;&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;bc&quot; class=&quot;margin-toggle&quot; /&gt;&lt;span class=&quot;sidenote&quot;&gt;https://backchannel.com/the-iphone-is-bigger-than-donald-trump-4be61d9f3ce0 &lt;/span&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+        <pubDate>Tue, 15 Nov 2016 20:00:00 +0000</pubDate>
+        <link>http://0.0.0.0:4000/articles/16/long-view</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/articles/16/long-view</guid>
+        
+        
+        <category>politics</category>
+        
+      </item>
+    
+  </channel>
+</rss>

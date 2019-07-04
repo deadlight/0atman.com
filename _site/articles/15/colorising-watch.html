@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Colourising Watch</title>
+  <meta name="description" content="For many years I had assumed (based on some comments in forums) that the watch unix command had a bug, and could not display colourised terminal output, even...">
+
+  <!-- Google Fonts loaded here depending on setting in _data/options.yml true loads font, blank does not-->
+  
+    <link href='//fonts.googleapis.com/css?family=Lato:400,400italic' rel='stylesheet' type='text/css'>
+  
+
+  <!-- Load up MathJax script if needed ... specify in /_data/options.yml file-->
+  
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+  <link rel="stylesheet" type="text/css" href="/css/tufte.css">
+  <!-- <link rel="stylesheet" type="text/css" href="/css/print.css" media="print"> -->
+
+  <link rel="canonical" href="http://0.0.0.0:4000/articles/15/colorising-watch">
+
+  <link rel="alternate" type="application/rss+xml" title="0atman" href="http://0.0.0.0:4000/feed.xml" />
+</head>
+
+  <body>
+    <!--- Header and nav template site-wide -->
+<header>
+    <nav class="group">
+        <a href="/"><img class="badge" src="/assets/img/logo.png" alt="CH"></a>
+        
+            
+        
+            
+                
+                    <a href="/">blog</a>
+                
+            
+        
+            
+                
+                    <a href="/about/">About</a>
+                
+            
+        
+            
+                
+                    <a href="/css/print.css"></a>
+                
+            
+        
+            
+        
+    </nav>
+</header>
+
+    <article class="group">
+      <h1>Colourising Watch</h1>
+<p class="subtitle">March 10, 2015</p>
+
+<p>For many years I had assumed (based on some comments in forums) that the <code class="highlighter-rouge">watch</code> unix command had a bug, and could not display colourised terminal output, even when using the <code class="highlighter-rouge">-c</code> colour option.</p>
+
+<p>This made me sad.</p>
+
+<p>Recently I’ve been writing tests in py.test, which colourises the output in red for failed test cases. My tests take less than 1s, so while I’m writing them, I run <code class="highlighter-rouge">watch py.test</code>, watch it fail, and keep writing it till it passes.</p>
+
+<p>After a few days of non-coloured output, I resumed my search and found <a href="http://stackoverflow.com/questions/10776977/more-command-alternative-that-does-support-colors">this</a>. My search was over!</p>
+
+<p>The simple solution is this: Not only must watch be told (with <code class="highlighter-rouge">-c</code>) to interpret colours, but the command you are watching must be too. This is because both operate in <code class="highlighter-rouge">color=auto</code> mode; colours are only output if the program detects it is being run in an interactive terminal, not a pipe.</p>
+
+<p>I simply ran <code class="highlighter-rouge">watch -c py.test --color=yes</code> and shed tears of joy!</p>
+
+
+
+    </article>
+    <span class="print-footer">Colourising Watch - March 10, 2015 - Tristram Oaten</span>
+    <footer>
+  <hr class="slender">
+  <ul class="footer-links">
+    <li><a href="mailto:hate@spam.net"><span class="icon-mail"></span></a></li>    
+    
+      <li>
+        <a href="//www.twitter.com/0atman"><span class="icon-twitter"></span></a>
+      </li>
+    
+      <li>
+        <a href="//github.com/0atman"><span class="icon-github"></span></a>
+      </li>
+    
+      <li>
+        <a href="/feed.xml"><span class="icon-feed"></span></a>
+      </li>
+      
+  </ul>
+<div class="credits">
+<span>&copy; 2019 &nbsp;&nbsp;TRISTRAM OATEN</span></br> <br>
+<span>This site created with the <a href="//github.com/clayh53/tufte-jekyll">Tufte theme for Content-centric blogging </a> in <a href="//jekyllrb.com">Jekyll</a>.</span> 
+</div>  
+</footer>
+  </body>
+</html>

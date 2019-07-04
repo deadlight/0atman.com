@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Getting the trackpoint working in ubuntu on the Thinkpad X240</title>
+  <meta name="description" content="TrackPoint scrolling doesn’t work out of box, but you can easily fix it by yourself.1) Add psmouse.proto=bare option to you kernel during boot2) Modify /etc/...">
+
+  <!-- Google Fonts loaded here depending on setting in _data/options.yml true loads font, blank does not-->
+  
+    <link href='//fonts.googleapis.com/css?family=Lato:400,400italic' rel='stylesheet' type='text/css'>
+  
+
+  <!-- Load up MathJax script if needed ... specify in /_data/options.yml file-->
+  
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+  <link rel="stylesheet" type="text/css" href="/css/tufte.css">
+  <!-- <link rel="stylesheet" type="text/css" href="/css/print.css" media="print"> -->
+
+  <link rel="canonical" href="http://0.0.0.0:4000/articles/15/x240-trackpad">
+
+  <link rel="alternate" type="application/rss+xml" title="0atman" href="http://0.0.0.0:4000/feed.xml" />
+</head>
+
+  <body>
+    <!--- Header and nav template site-wide -->
+<header>
+    <nav class="group">
+        <a href="/"><img class="badge" src="/assets/img/logo.png" alt="CH"></a>
+        
+            
+        
+            
+                
+                    <a href="/">blog</a>
+                
+            
+        
+            
+                
+                    <a href="/about/">About</a>
+                
+            
+        
+            
+                
+                    <a href="/css/print.css"></a>
+                
+            
+        
+            
+        
+    </nav>
+</header>
+
+    <article class="group">
+      <h1>Getting the trackpoint working in ubuntu on the Thinkpad X240</h1>
+<p class="subtitle">September 24, 2015</p>
+
+<p>TrackPoint scrolling doesn’t work out of box, but you can easily fix it by yourself.</p>
+
+<p>1) Add <code class="highlighter-rouge">psmouse.proto=bare</code> option to you kernel during boot</p>
+
+<p>2) Modify <code class="highlighter-rouge">/etc/default/grub</code> with the GRUB_CMDLINE_LINUX option (<code class="highlighter-rouge">GRUB_CMDLINE_LINUX="psmouse.proto=bare quiet splash</code>)</p>
+
+<p>3) As root run <code class="highlighter-rouge">sudo update-grub</code></p>
+
+<p>4) Create /usr/share/X11/xorg.conf.d/11-trackpoint-wheel-emulation.conf</p>
+
+<script src="https://gist.github.com/0atman/b08bee673d6381d7f1f2.js"></script>
+
+<p>5) Reboot</p>
+
+<p>Don’t forget to disable your touchpad in the bios to avoid the cursor wobbling when you click!</p>
+
+<p><a href="https://ask.fedoraproject.org/en/question/46089/x240-scroll-with-trackpoint-and-use-fingerprint-reader/">source</a></p>
+
+
+
+    </article>
+    <span class="print-footer">Getting the trackpoint working in ubuntu on the Thinkpad X240 - September 24, 2015 - Tristram Oaten</span>
+    <footer>
+  <hr class="slender">
+  <ul class="footer-links">
+    <li><a href="mailto:hate@spam.net"><span class="icon-mail"></span></a></li>    
+    
+      <li>
+        <a href="//www.twitter.com/0atman"><span class="icon-twitter"></span></a>
+      </li>
+    
+      <li>
+        <a href="//github.com/0atman"><span class="icon-github"></span></a>
+      </li>
+    
+      <li>
+        <a href="/feed.xml"><span class="icon-feed"></span></a>
+      </li>
+      
+  </ul>
+<div class="credits">
+<span>&copy; 2019 &nbsp;&nbsp;TRISTRAM OATEN</span></br> <br>
+<span>This site created with the <a href="//github.com/clayh53/tufte-jekyll">Tufte theme for Content-centric blogging </a> in <a href="//jekyllrb.com">Jekyll</a>.</span> 
+</div>  
+</footer>
+  </body>
+</html>

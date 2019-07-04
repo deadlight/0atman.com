@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Blaze: A lightweight literate programing preprocessor</title>
+  <meta name="description" content="I’ve been playing with many literate programming tools since this technique of document-first programming came into my life two years ago.Literate programmin...">
+
+  <!-- Google Fonts loaded here depending on setting in _data/options.yml true loads font, blank does not-->
+  
+    <link href='//fonts.googleapis.com/css?family=Lato:400,400italic' rel='stylesheet' type='text/css'>
+  
+
+  <!-- Load up MathJax script if needed ... specify in /_data/options.yml file-->
+  
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+  <link rel="stylesheet" type="text/css" href="/css/tufte.css">
+  <!-- <link rel="stylesheet" type="text/css" href="/css/print.css" media="print"> -->
+
+  <link rel="canonical" href="http://0.0.0.0:4000/articles/17/blaze">
+
+  <link rel="alternate" type="application/rss+xml" title="0atman" href="http://0.0.0.0:4000/feed.xml" />
+</head>
+
+  <body>
+    <!--- Header and nav template site-wide -->
+<header>
+    <nav class="group">
+        <a href="/"><img class="badge" src="/assets/img/logo.png" alt="CH"></a>
+        
+            
+        
+            
+                
+                    <a href="/">blog</a>
+                
+            
+        
+            
+                
+                    <a href="/about/">About</a>
+                
+            
+        
+            
+                
+                    <a href="/css/print.css"></a>
+                
+            
+        
+            
+        
+    </nav>
+</header>
+
+    <article class="group">
+      <h1>Blaze: A lightweight literate programing preprocessor</h1>
+<p class="subtitle">September 12, 2017</p>
+
+<p>I’ve been playing with many literate programming tools since this technique of document-first programming came into my life two years ago.</p>
+
+<p><a href="https://en.wikipedia.org/wiki/Literate_programming">Literate programming</a> (LP), a concept that has been around since at least the 80s, is back in the spotlight since the <a href="http://witheve.com/">Eve</a> language (released by the Eve team headed by Chris Granger of <a href="http://lighttable.com">Light Table</a> fame) was released to the public in 2015.</p>
+
+<p>While LP’s original concept aimed to create a document-first system whereby the building blocks of the actual code could be read (by the human or compiler) in any order (as it is in Eve), the contemporary state of the art is focused on creating the document-first model with existing procedural languages.</p>
+
+<p>There are two main kinds of tool in the modern LP category:</p>
+
+<ol>
+  <li>Tools that write beautiful documentation based on comments in source code, such as <a href="http://ashkenas.com/docco/">Docco</a> and (a personal favourite) <a href="https://github.com/gdeer81/marginalia">Marginalia</a></li>
+  <li>Tools that allow you to execute code-fenced source code within some markup, such as <a href="https://github.com/zyedidia/Literate">Literate</a>, <a href="https://github.com/jostylr/litpro">litpro</a>, and tiny <a href="https://github.com/vijithassar/lit">lit</a>.</li>
+</ol>
+
+<p>The first is an evolution of the documentation processors you will be familiar with, no real innovation has happened in this space since <a href="https://en.wikipedia.org/wiki/Javadoc">Javadoc</a>. (Much though I love <a href="http://www.sphinx-doc.org/en/stable/index.html">Sphynx</a> et al)</p>
+
+<p>The second category I think is worth exploring.</p>
+
+<p>It is into this ecosystem I present <a href="https://gist.github.com/0atman/5ea526a3ae26409da50dd7697eb700e8">Blaze</a>.</p>
+
+<h2 id="blaze-is-tiny">Blaze is Tiny:</h2>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/usr/bin/env sh</span>
+<span class="nv">args</span><span class="o">=</span><span class="nv">$1</span>
+<span class="nv">script</span><span class="o">=</span><span class="nv">$2</span>
+
+<span class="nv">file_extension</span><span class="o">=</span><span class="si">$(</span><span class="nb">echo</span> <span class="nv">$script</span> |awk <span class="nt">-F</span> <span class="nb">.</span> <span class="s1">'{if (NF&gt;1) {print $NF}}'</span><span class="si">)</span>
+
+<span class="k">if</span> <span class="o">[</span> <span class="s2">"</span><span class="nv">$file_extension</span><span class="s2">"</span> <span class="o">=</span> <span class="s2">"md"</span> <span class="o">]</span>
+<span class="k">then
+    </span><span class="nb">cat</span> <span class="nv">$script</span> | <span class="nb">awk</span> <span class="s1">'{ if (/^```/) { i++; next } if ( i % 2 == 1) { print } }'</span> <span class="o">&gt;</span> <span class="nv">$script</span>.out
+    <span class="nv">$args</span> <span class="nv">$script</span>.out
+    <span class="nv">exit_code</span><span class="o">=</span><span class="nv">$?</span>
+    <span class="nb">rm</span> <span class="nv">$script</span>.out
+<span class="k">else</span>
+    <span class="nv">$args</span> <span class="nv">$script</span>
+    <span class="nv">exit_code</span><span class="o">=</span><span class="nv">$?</span>
+<span class="k">fi
+</span><span class="nb">exit</span> <span class="nv">$exit_code</span>
+</code></pre></div></div>
+
+<p>But what it gives you is the ability to execute your markdown files as though they were scripts: It is a drop-in replacement for <code class="highlighter-rouge">/usr/bin/env</code>:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!blaze python
+</span><span class="k">print</span><span class="p">(</span><span class="s">"hi"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>It then allows as many paramaters to be passed to your interpreter as you like (unlike normal shebangs), which means you can use tools like <a href="https://github.com/pantsbuild/pex">pex</a>:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!blaze pex arrow --
+</span><span class="kn">import</span> <span class="nn">arrow</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"run"</span><span class="p">,</span> <span class="n">arrow</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">humanize</span><span class="p">())</span>  <span class="c1"># blaze only processes .md files, plain scripts can be run as-normal
+</span></code></pre></div></div>
+
+<blockquote>
+  <p>(Note that we are able to use pex’s ephemeral venv trick to run python with any requirements pre-installed)</p>
+</blockquote>
+
+<p>Blaze’s REAL trick, is that if it is called with a <code class="highlighter-rouge">.md</code> file, it only executes code inside triple-backtick codefences, as in this all-encompasing example of a literate program with built-in requirements:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!blaze pex flask flask_restful --
+</span>
+<span class="c1"># Imports
+</span><span class="n">First</span> <span class="n">the</span> <span class="n">imports</span><span class="p">,</span> <span class="n">this</span> <span class="n">demo</span> <span class="n">requires</span> <span class="n">the</span> <span class="sb">`flask_restful`</span> <span class="n">package</span><span class="o">.</span>
+<span class="n">Then</span> <span class="n">we</span> <span class="nb">set</span> <span class="n">up</span> <span class="n">the</span> <span class="n">Flask</span> <span class="n">wsgi</span> <span class="n">application</span> <span class="nb">object</span><span class="p">,</span> <span class="sb">`app`</span> <span class="ow">and</span> <span class="n">the</span> <span class="n">api</span> <span class="n">wrapper</span><span class="p">,</span> <span class="sb">`api`</span><span class="o">.</span>
+
+<span class="sb">``</span><span class="n">python</span>
+<span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
+<span class="kn">from</span> <span class="nn">flask_restful</span> <span class="kn">import</span> <span class="n">Resource</span><span class="p">,</span> <span class="n">Api</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
+<span class="n">api</span> <span class="o">=</span> <span class="n">Api</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+<span class="sb">``</span>
+
+<span class="c1"># Flask Restful resources
+</span><span class="n">We</span> <span class="n">define</span> <span class="n">a</span> <span class="n">single</span> <span class="sb">`HelloWorld`</span> <span class="n">resource</span><span class="p">,</span> <span class="n">that</span> <span class="n">responds</span> <span class="k">with</span> <span class="n">a</span> <span class="n">simple</span> <span class="n">json</span>
+<span class="nb">object</span> <span class="n">on</span> <span class="n">a</span> <span class="sb">`GET`</span> <span class="n">request</span><span class="o">.</span>
+
+<span class="sb">``</span><span class="n">python</span>
+<span class="k">class</span> <span class="nc">HelloWorld</span><span class="p">(</span><span class="n">Resource</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s">'hello'</span><span class="p">:</span> <span class="s">'world'</span><span class="p">}</span>
+<span class="sb">``</span>
+
+<span class="c1"># Routing
+</span><span class="sb">`api.add_resource()`</span> <span class="n">wires</span> <span class="n">the</span> <span class="sb">`Resource`</span> <span class="k">class</span> <span class="err">`</span><span class="nc">HelloWorld</span><span class="err">`</span> <span class="n">into</span> <span class="n">the</span> <span class="n">flask</span>
+<span class="n">router</span> <span class="n">at</span> <span class="sb">`/`</span><span class="o">.</span>
+
+<span class="sb">``</span>
+<span class="n">api</span><span class="o">.</span><span class="n">add_resource</span><span class="p">(</span><span class="n">HelloWorld</span><span class="p">,</span> <span class="s">'/'</span><span class="p">)</span>
+<span class="sb">``</span>
+
+<span class="c1"># Run Server
+</span><span class="n">After</span> <span class="n">we</span> <span class="n">have</span> <span class="n">created</span> <span class="n">everything</span><span class="p">,</span> <span class="n">we</span> <span class="n">run</span> <span class="n">the</span> <span class="n">flask</span> <span class="n">werkzeug</span> <span class="n">server</span><span class="o">.</span>
+
+<span class="sb">``</span>
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">'__main__'</span><span class="p">:</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+<span class="sb">``</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>(double backticks should be triple, but that messes with markdown highlighting - sorry!)</p>
+</blockquote>
+
+<p>Magic, right?</p>
+
+<h2 id="overhead">Overhead</h2>
+<p>Blaze introduces minimal startup overhead, somewhere between 5-20ms, an almost zero runtime overhead (<code class="highlighter-rouge">sh</code> is running, I suppose).</p>
+
+<h3 id="python-shebang">Python Shebang</h3>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>λ ./py-test.py
+hi
+./py-test.py  0.02s user 0.00s system 94% cpu 0.025 total
+</code></pre></div></div>
+
+<h3 id="blaze-shebang">Blaze Shebang</h3>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>λ ./blaze-test.py
+hi
+./blaze-test.py  0.02s user 0.00s system 67% cpu 0.030 total
+</code></pre></div></div>
+
+<h2 id="prior-art--acknowledgements">Prior Art / Acknowledgements</h2>
+
+<p>Blaze is currently a hacked-together LP tool that is only suitable for one-off scripts. I borrowed the awk code-fence-stripping code from <a href="https://gist.github.com/trauber/4955706">@trauber</a>.</p>
+
+<h2 id="and-the-name">And the name?</h2>
+<p>Blaze is lit, bro 😎</p>
+
+<p><img src="http://instaco.de/stream/113738" alt="blaze" /></p>
+
+
+
+    </article>
+    <span class="print-footer">Blaze: A lightweight literate programing preprocessor - September 12, 2017 - Tristram Oaten</span>
+    <footer>
+  <hr class="slender">
+  <ul class="footer-links">
+    <li><a href="mailto:hate@spam.net"><span class="icon-mail"></span></a></li>    
+    
+      <li>
+        <a href="//www.twitter.com/0atman"><span class="icon-twitter"></span></a>
+      </li>
+    
+      <li>
+        <a href="//github.com/0atman"><span class="icon-github"></span></a>
+      </li>
+    
+      <li>
+        <a href="/feed.xml"><span class="icon-feed"></span></a>
+      </li>
+      
+  </ul>
+<div class="credits">
+<span>&copy; 2019 &nbsp;&nbsp;TRISTRAM OATEN</span></br> <br>
+<span>This site created with the <a href="//github.com/clayh53/tufte-jekyll">Tufte theme for Content-centric blogging </a> in <a href="//jekyllrb.com">Jekyll</a>.</span> 
+</div>  
+</footer>
+  </body>
+</html>

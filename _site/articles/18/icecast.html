@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Streaming with Icecast</title>
+  <meta name="description" content="After years of no satisfactory music radio solution, I researched in earnest how to set up my own broadcast setup, and it was easier than I thought!In essens...">
+
+  <!-- Google Fonts loaded here depending on setting in _data/options.yml true loads font, blank does not-->
+  
+    <link href='//fonts.googleapis.com/css?family=Lato:400,400italic' rel='stylesheet' type='text/css'>
+  
+
+  <!-- Load up MathJax script if needed ... specify in /_data/options.yml file-->
+  
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+  <link rel="stylesheet" type="text/css" href="/css/tufte.css">
+  <!-- <link rel="stylesheet" type="text/css" href="/css/print.css" media="print"> -->
+
+  <link rel="canonical" href="http://0.0.0.0:4000/articles/18/icecast">
+
+  <link rel="alternate" type="application/rss+xml" title="0atman" href="http://0.0.0.0:4000/feed.xml" />
+</head>
+
+  <body>
+    <!--- Header and nav template site-wide -->
+<header>
+    <nav class="group">
+        <a href="/"><img class="badge" src="/assets/img/logo.png" alt="CH"></a>
+        
+            
+        
+            
+                
+                    <a href="/">blog</a>
+                
+            
+        
+            
+                
+                    <a href="/about/">About</a>
+                
+            
+        
+            
+                
+                    <a href="/css/print.css"></a>
+                
+            
+        
+            
+        
+    </nav>
+</header>
+
+    <article class="group">
+      <h1>Streaming with Icecast</h1>
+<p class="subtitle">February 23, 2018</p>
+
+<p>After years of no satisfactory music radio solution, I researched in earnest how to set up my own broadcast setup, and it was easier than I thought!</p>
+
+<p>In essense:</p>
+<ul>
+  <li>Darkice redirects the sound from your speakers to a remote server</li>
+  <li>Icecast re-broadcasts that audio to n clients</li>
+</ul>
+
+<p>Thanks to Ruggero “infiniteproject”, we have a <a href="https://hub.docker.com/r/infiniteproject/icecast/">dockerized icecast server</a>, run it on your favourite container platform with these settings:</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="n">ICECAST_SOURCE_PASSWORD</span> <span class="o">=</span> <span class="n">yourpassword</span>
+<span class="n">ICECAST_ADMIN_PASSWORD</span>  <span class="o">=</span> <span class="n">yourpassword</span>
+<span class="n">ICECAST_RELAY_PASSWORD</span>  <span class="o">=</span> <span class="n">yourpassword</span>
+<span class="n">ICECAST_ADMIN_USERNAME</span>  <span class="o">=</span> <span class="n">DJ_Schmumu</span>
+<span class="n">ICECAST_ADMIN_EMAIL</span>     <span class="o">=</span> <span class="n">dj_schmumu</span>
+<span class="n">ICECAST_LOCATION</span>        <span class="o">=</span> <span class="n">Spaaaace</span>
+<span class="n">ICECAST_HOSTNAME</span>        <span class="o">=</span> <span class="n">your</span><span class="p">.</span><span class="n">server</span><span class="p">.</span><span class="n">here</span>
+<span class="n">ICECAST_MAX_CLIENTS</span>     <span class="o">=</span> <span class="mi">10</span>
+<span class="n">ICECAST_MAX_SOURCES</span>     <span class="o">=</span> <span class="mi">10</span>
+</code></pre></div></div>
+
+<p>Then on your local machine, run <a href="http://darkice.org/">Darkice</a>, or the ui, Darksnow, with these settings:</p>
+
+<div class="language-ini highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nn">[general]</span>
+<span class="py">duration</span>        <span class="p">=</span> <span class="s">0      # duration in s, 0 forever</span>
+<span class="py">bufferSecs</span>      <span class="p">=</span> <span class="s">1      # buffer, in seconds</span>
+<span class="py">reconnect</span>       <span class="p">=</span> <span class="s">yes    # reconnect if disconnected</span>
+
+<span class="nn">[input]</span>
+<span class="py">device</span>          <span class="p">=</span> <span class="s">default # or `pulse' for Pulseaudio</span>
+<span class="py">sampleRate</span>      <span class="p">=</span> <span class="s">44100   # sample rate 11025, 22050 or 44100</span>
+<span class="py">bitsPerSample</span>   <span class="p">=</span> <span class="s">16      # bits</span>
+<span class="py">channel</span>         <span class="p">=</span> <span class="s">2       # 2 = stereo</span>
+
+<span class="nn">[icecast2-0]</span>
+<span class="py">bitrateMode</span>     <span class="p">=</span> <span class="s">vbr       # variable bit rate (`cbr' constant, `abr' average)</span>
+<span class="py">quality</span>         <span class="p">=</span> <span class="s">1.0       # 1.0 is best quality</span>
+<span class="py">format</span>          <span class="p">=</span> <span class="s">mp3       # format. Choose `vorbis' for OGG Vorbis</span>
+<span class="py">bitrate</span>         <span class="p">=</span> <span class="s">256       # bitrate</span>
+<span class="py">server</span>          <span class="p">=</span> <span class="s">your.icecast.server # or IP</span>
+<span class="py">port</span>            <span class="p">=</span> <span class="s">8000      # port for IceCast2 access</span>
+<span class="py">password</span>        <span class="p">=</span> <span class="s">very secure password # source password to the IceCast2 server</span>
+<span class="py">mountPoint</span>      <span class="p">=</span> <span class="s">your_radio_station.mp3  # mount point on the IceCast2 server .mp3 or .ogg</span>
+<span class="py">name</span>            <span class="p">=</span> <span class="s">Your Radio Station Name</span>
+</code></pre></div></div>
+
+<p>Then tune in with your favourite streaming client, or even just hitting your.icecast.server:8000 in a browser, the mp3 will stream!</p>
+
+<p>You shouldn’t use this to stream spotify to your friends, as that’s in breach of their single-listener license, before you ask.</p>
+
+
+
+    </article>
+    <span class="print-footer">Streaming with Icecast - February 23, 2018 - Tristram Oaten</span>
+    <footer>
+  <hr class="slender">
+  <ul class="footer-links">
+    <li><a href="mailto:hate@spam.net"><span class="icon-mail"></span></a></li>    
+    
+      <li>
+        <a href="//www.twitter.com/0atman"><span class="icon-twitter"></span></a>
+      </li>
+    
+      <li>
+        <a href="//github.com/0atman"><span class="icon-github"></span></a>
+      </li>
+    
+      <li>
+        <a href="/feed.xml"><span class="icon-feed"></span></a>
+      </li>
+      
+  </ul>
+<div class="credits">
+<span>&copy; 2019 &nbsp;&nbsp;TRISTRAM OATEN</span></br> <br>
+<span>This site created with the <a href="//github.com/clayh53/tufte-jekyll">Tufte theme for Content-centric blogging </a> in <a href="//jekyllrb.com">Jekyll</a>.</span> 
+</div>  
+</footer>
+  </body>
+</html>

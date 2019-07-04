@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>The Testable Documentation Manifesto</title>
+  <meta name="description" content="One of the problems with tech documentation (api, installation instructions etc) is that they get stale. APIs change, software and plugins alter their interf...">
+
+  <!-- Google Fonts loaded here depending on setting in _data/options.yml true loads font, blank does not-->
+  
+    <link href='//fonts.googleapis.com/css?family=Lato:400,400italic' rel='stylesheet' type='text/css'>
+  
+
+  <!-- Load up MathJax script if needed ... specify in /_data/options.yml file-->
+  
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+  <link rel="stylesheet" type="text/css" href="/css/tufte.css">
+  <!-- <link rel="stylesheet" type="text/css" href="/css/print.css" media="print"> -->
+
+  <link rel="canonical" href="http://0.0.0.0:4000/articles/17/testable-docs">
+
+  <link rel="alternate" type="application/rss+xml" title="0atman" href="http://0.0.0.0:4000/feed.xml" />
+</head>
+
+  <body>
+    <!--- Header and nav template site-wide -->
+<header>
+    <nav class="group">
+        <a href="/"><img class="badge" src="/assets/img/logo.png" alt="CH"></a>
+        
+            
+        
+            
+                
+                    <a href="/">blog</a>
+                
+            
+        
+            
+                
+                    <a href="/about/">About</a>
+                
+            
+        
+            
+                
+                    <a href="/css/print.css"></a>
+                
+            
+        
+            
+        
+    </nav>
+</header>
+
+    <article class="group">
+      <h1>The Testable Documentation Manifesto</h1>
+<p class="subtitle">September 24, 2017</p>
+
+<p>One of the problems with tech documentation (api, installation instructions etc) is that they get stale. APIs change, software and plugins alter their interface and commands, and websites go away.</p>
+
+<p>To solve this, I propose we write our documentation in a way that can be executed, or verified.</p>
+
+<p>Luckily, I wrote <a href="https://gist.github.com/0atman/5ea526a3ae26409da50dd7697eb700e8"><code class="highlighter-rouge">blaze</code></a> to execute codeblocks inside of markdown, which means that with a little help from a few common unix tools, we can solve this problem.</p>
+
+<h1 id="testable-software-installation-example">Testable Software Installation Example</h1>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nb">set</span> <span class="nt">-e</span>
+pip <span class="nb">install </span>badpackage_123183183
+</code></pre></div></div>
+
+<p>The output of executing the very file you are reading now is:</p>
+
+<blockquote>
+  <p>$ ./README.md</p>
+
+  <p>Collecting badpackage_123183183</p>
+
+  <p>Could not find a version that satisfies the requirement badpackage_123183183 (from versions: )
+No matching distribution found for badpackage_123183183</p>
+</blockquote>
+
+<p>You now can execute your readme instructions as part of your build process (perhaps with a little setup beforehand, such as running it inside a container), and the exit code (in this case 1) will allow you to fail the build if the instructions are out of date.</p>
+
+<p>You can get the <a href="https://gist.github.com/0atman/242cf9d6d99f2fbeb182a090213cf74a">gist</a> of it here.</p>
+
+<h3 id="related">Related</h3>
+<ul>
+  <li><a href="https://blaze.oat.sh">blaze</a>  is lit. It allows language-agnostic literate-style programming</li>
+</ul>
+
+
+
+    </article>
+    <span class="print-footer">The Testable Documentation Manifesto - September 24, 2017 - Tristram Oaten</span>
+    <footer>
+  <hr class="slender">
+  <ul class="footer-links">
+    <li><a href="mailto:hate@spam.net"><span class="icon-mail"></span></a></li>    
+    
+      <li>
+        <a href="//www.twitter.com/0atman"><span class="icon-twitter"></span></a>
+      </li>
+    
+      <li>
+        <a href="//github.com/0atman"><span class="icon-github"></span></a>
+      </li>
+    
+      <li>
+        <a href="/feed.xml"><span class="icon-feed"></span></a>
+      </li>
+      
+  </ul>
+<div class="credits">
+<span>&copy; 2019 &nbsp;&nbsp;TRISTRAM OATEN</span></br> <br>
+<span>This site created with the <a href="//github.com/clayh53/tufte-jekyll">Tufte theme for Content-centric blogging </a> in <a href="//jekyllrb.com">Jekyll</a>.</span> 
+</div>  
+</footer>
+  </body>
+</html>
