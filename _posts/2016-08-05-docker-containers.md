@@ -5,7 +5,7 @@ category: coding
 layout: post
 ---
 
-Software containers have, almost overnight, made traditional piecemeal-deployment processes obsolete in the same way as the physical shipping container did for traditional crater based shipping.
+Software containers have, almost overnight, made traditional piecemeal-deployment processes obsolete in the same way as the physical shipping container did for traditional crate-based shipping.
 
 Just because you *can* write and ship software without using containers, doesn't mean you *should*.
 
