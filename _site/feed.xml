@@ -5,8 +5,8 @@
     <description></description>
     <link>http://0.0.0.0:4000/</link>
     <atom:link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 04 Jul 2019 19:05:34 +0100</pubDate>
-    <lastBuildDate>Thu, 04 Jul 2019 19:05:34 +0100</lastBuildDate>
+    <pubDate>Fri, 05 Jul 2019 12:17:41 +0100</pubDate>
+    <lastBuildDate>Fri, 05 Jul 2019 12:17:41 +0100</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
     
       <item>
@@ -149,7 +149,8 @@ No matching distribution found for badpackage_123183183&lt;/p&gt;
     
       <item>
         <title>Blaze: A lightweight literate programing preprocessor</title>
-        <description>&lt;p&gt;I’ve been playing with many literate programming tools since this technique of document-first programming came into my life two years ago.&lt;/p&gt;
+        <description>&lt;p&gt;&lt;label for=&quot;blaze&quot; class=&quot;margin-toggle&quot;&gt;⊕&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;blaze&quot; class=&quot;margin-toggle&quot; /&gt;&lt;span class=&quot;marginnote&quot;&gt;&lt;img class=&quot;fullwidth&quot; src=&quot;http://instaco.de/stream/113738&quot; /&gt;&lt;br /&gt;&lt;/span&gt;
+I’ve been playing with many literate programming tools since this technique of document-first programming came into my life two years ago.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Literate_programming&quot;&gt;Literate programming&lt;/a&gt; (LP), a concept that has been around since at least the 80s, is back in the spotlight since the &lt;a href=&quot;http://witheve.com/&quot;&gt;Eve&lt;/a&gt; language (released by the Eve team headed by Chris Granger of &lt;a href=&quot;http://lighttable.com&quot;&gt;Light Table&lt;/a&gt; fame) was released to the public in 2015.&lt;/p&gt;
 
@@ -158,8 +159,8 @@ No matching distribution found for badpackage_123183183&lt;/p&gt;
 &lt;p&gt;There are two main kinds of tool in the modern LP category:&lt;/p&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;Tools that write beautiful documentation based on comments in source code, such as &lt;a href=&quot;http://ashkenas.com/docco/&quot;&gt;Docco&lt;/a&gt; and (a personal favourite) &lt;a href=&quot;https://github.com/gdeer81/marginalia&quot;&gt;Marginalia&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Tools that allow you to execute code-fenced source code within some markup, such as &lt;a href=&quot;https://github.com/zyedidia/Literate&quot;&gt;Literate&lt;/a&gt;, &lt;a href=&quot;https://github.com/jostylr/litpro&quot;&gt;litpro&lt;/a&gt;, and tiny &lt;a href=&quot;https://github.com/vijithassar/lit&quot;&gt;lit&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;1) Tools that write beautiful documentation based on comments in source code, such as &lt;a href=&quot;http://ashkenas.com/docco/&quot;&gt;Docco&lt;/a&gt; and (a personal favourite) &lt;a href=&quot;https://github.com/gdeer81/marginalia&quot;&gt;Marginalia&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;2) Tools that allow you to execute code-fenced source code within some markup, such as &lt;a href=&quot;https://github.com/zyedidia/Literate&quot;&gt;Literate&lt;/a&gt;, &lt;a href=&quot;https://github.com/jostylr/litpro&quot;&gt;litpro&lt;/a&gt;, and tiny &lt;a href=&quot;https://github.com/vijithassar/lit&quot;&gt;lit&lt;/a&gt;.&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;p&gt;The first is an evolution of the documentation processors you will be familiar with, no real innovation has happened in this space since &lt;a href=&quot;https://en.wikipedia.org/wiki/Javadoc&quot;&gt;Javadoc&lt;/a&gt;. (Much though I love &lt;a href=&quot;http://www.sphinx-doc.org/en/stable/index.html&quot;&gt;Sphynx&lt;/a&gt; et al)&lt;/p&gt;
@@ -195,16 +196,12 @@ No matching distribution found for badpackage_123183183&lt;/p&gt;
 &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;hi&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;It then allows as many paramaters to be passed to your interpreter as you like (unlike normal shebangs), which means you can use tools like &lt;a href=&quot;https://github.com/pantsbuild/pex&quot;&gt;pex&lt;/a&gt;:&lt;/p&gt;
+&lt;p&gt;It then allows as many paramaters to be passed to your interpreter as you like (unlike normal shebangs), which means you can use tools like &lt;a href=&quot;https://github.com/pantsbuild/pex&quot;&gt;pex&lt;/a&gt;&lt;label for=&quot;&quot; class=&quot;margin-toggle sidenote-number&quot;&gt;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; class=&quot;margin-toggle&quot; /&gt;&lt;span class=&quot;sidenote&quot;&gt;Note that we are able to use pex’s ephemeral venv trick to run python with any requirements pre-installed &lt;/span&gt;:&lt;/p&gt;
 
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;#!blaze pex arrow --
 &lt;/span&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;arrow&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;run&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arrow&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;now&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;humanize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# blaze only processes .md files, plain scripts can be run as-normal
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;(Note that we are able to use pex’s ephemeral venv trick to run python with any requirements pre-installed)&lt;/p&gt;
-&lt;/blockquote&gt;
 
 &lt;p&gt;Blaze’s REAL trick, is that if it is called with a &lt;code class=&quot;highlighter-rouge&quot;&gt;.md&lt;/code&gt; file, it only executes code inside triple-backtick codefences, as in this all-encompasing example of a literate program with built-in requirements:&lt;/p&gt;
 
@@ -248,10 +245,7 @@ No matching distribution found for badpackage_123183183&lt;/p&gt;
     &lt;span class=&quot;n&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
 &lt;span class=&quot;sb&quot;&gt;``&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;(double backticks should be triple, but that messes with markdown highlighting - sorry!)&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;&lt;label for=&quot;&quot; class=&quot;margin-toggle&quot;&gt; ⊕&lt;/label&gt;&lt;input type=&quot;checkbox&quot; class=&quot;margin-toggle&quot; /&gt;&lt;span class=&quot;marginnote&quot;&gt;In the previous codeblock, double backticks should be triple, but that messes with markdown highlighting - sorry! &lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;Magic, right?&lt;/p&gt;
 
@@ -277,7 +271,6 @@ hi
 &lt;h2 id=&quot;and-the-name&quot;&gt;And the name?&lt;/h2&gt;
 &lt;p&gt;Blaze is lit, bro 😎&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://instaco.de/stream/113738&quot; alt=&quot;blaze&quot; /&gt;&lt;/p&gt;
 </description>
         <pubDate>Tue, 12 Sep 2017 20:40:00 +0100</pubDate>
         <link>http://0.0.0.0:4000/articles/17/blaze</link>
